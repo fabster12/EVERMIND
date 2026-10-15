@@ -16,6 +16,7 @@ EVERMIND/
 ├── src/                    THE PROJECT - the agent, its data, its specs. See src/STRUCTURE.md
 ├── docs/                   Finished documents people read. Generated or converted, not drafted here
 ├── notes/                  Working material - the brief, lab notes, course guides
+├── scratch/                Drafts and working notes. Committed, but nothing here is authoritative
 ├── tools/                  Scripts that generate everything in docs/ and src/fixtures/
 │                           (and the two share zips, into a dist/ it creates on demand)
 │
