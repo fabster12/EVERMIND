@@ -17,6 +17,7 @@ EVERMIND/
 ├── docs/                   Finished documents people read. Generated or converted, not drafted here
 ├── notes/                  Working material - the brief, lab notes, course guides
 ├── scratch/                Drafts and working notes. Committed, but nothing here is authoritative
+├── presentation/            8-min VP pitch video - plan and prompts, not the Phase 1 deck
 ├── tools/                  Scripts that generate everything in docs/ and src/fixtures/
 │                           (and the two share zips, into a dist/ it creates on demand)
 │
