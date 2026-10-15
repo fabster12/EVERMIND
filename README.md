@@ -30,6 +30,7 @@ Greenfield — every component is new, including the knowledge base.
 
 | If you want | Read |
 | --- | --- |
+| **To set it up and run it** | **[`START-HERE.md`](START-HERE.md)** — uv, credentials, daily git |
 | The short version | [`docs/gate1/FedEx-Capstone-Summary-Group1.pdf`](docs/gate1/) — 3 pages |
 | The full design | [`docs/gate1/FedEx-Capstone-Design-EverMind.pdf`](docs/gate1/) — 7 pages |
 | The plan we are approving | [`src/openspec/changes/add-evermind-pipeline/proposal.md`](src/openspec/changes/add-evermind-pipeline/proposal.md) |

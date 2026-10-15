@@ -20,6 +20,7 @@ EVERMIND/
 ├── tools/                  Scripts that generate everything in docs/ and src/fixtures/
 │                           (and the two share zips, into a dist/ it creates on demand)
 │
+├── START-HERE.md           Setup, in order: uv, .env, the git helpers. Read this first
 ├── README.md               Start here: what EverMind is, how to rebuild it, who owns what
 ├── STRUCTURE.md            This file
 ├── TODO.md                 Open items with the reasoning, so tomorrow-you knows why
