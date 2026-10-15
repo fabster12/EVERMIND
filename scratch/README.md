@@ -4,6 +4,9 @@ Scribbles, drafts, and decisions that are not yet where they belong.
 
 Nothing here is authoritative. When a file in here settles, it moves:
 
+Files are prefixed `fabster_` so they sort together and are obviously
+scratch at a glance.
+
 | This kind of file | Ends up in |
 | --- | --- |
 | An ADR that has been agreed | `docs/decisions/NNNN-*.md` |

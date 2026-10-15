@@ -81,7 +81,7 @@ Two things in that first command are deliberate:
   failure across six laptops on Tuesday morning is an expensive way to
   discover a package has not caught up yet.
 - **`>=2.1.0,<3`** — the pin, and the reasoning, is in
-  [`scratch/0002-pin-google-adk-2-1.md`](scratch/0002-pin-google-adk-2-1.md).
+  [`scratch/fabster_adr-draft-adk-pin.md`](scratch/fabster_adr-draft-adk-pin.md).
   Short version: on 2.0.0 the Dev UI Traces tab shows zero spans, and the
   tab is how we show tool calls in the demo.
 
