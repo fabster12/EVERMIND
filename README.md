@@ -1,3 +1,5 @@
+<img src="docs/brand/evermind-icon.jpg" alt="" width="96" align="right">
+
 # EverMind
 
 **A support knowledge base only answers what somebody thought to write
@@ -13,6 +15,8 @@ publishes anything itself.**
 
 FedEx FDE Training Program capstone, Netherlands cohort · Group 1 ·
 Greenfield — every component is new, including the knowledge base.
+
+![Unanswered questions are grouped, drafted with sources, and held for a person to approve.](docs/brand/evermind-banner.jpg)
 
 | | |
 | --- | --- |
