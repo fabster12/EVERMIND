@@ -1,0 +1,320 @@
+{
+  "generated_seed": 20261019,
+  "entries": [
+    {
+      "faq_id": "FAQ-001",
+      "topic": "shipping",
+      "question": "How long does international shipping take?",
+      "answer": "Transit time depends on the service level selected. Express services typically deliver within 1-3 business days; economy services take 5-7.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-002",
+      "topic": "shipping",
+      "question": "Can I change the delivery address after shipping?",
+      "answer": "An address change can be requested while the shipment is in transit, subject to the destination being within the same country.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-003",
+      "topic": "shipping",
+      "question": "What is the maximum weight for a single parcel?",
+      "answer": "Standard parcel services accept up to 68 kg per piece. Heavier items require a freight service.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-004",
+      "topic": "tracking",
+      "question": "Where do I find my tracking number?",
+      "answer": "The tracking number appears on the shipping label and in the confirmation email sent when the label was created.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-005",
+      "topic": "tracking",
+      "question": "My tracking has not updated in two days. Is it lost?",
+      "answer": "A gap in scan events is common during line-haul transport. Contact support if there is no update for five business days.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-006",
+      "topic": "tracking",
+      "question": "What does 'in transit' mean?",
+      "answer": "The shipment has left the origin facility and is moving through the network toward its destination.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-007",
+      "topic": "customs",
+      "question": "Why is my shipment held at customs?",
+      "answer": "Customs may hold a shipment pending documentation, duty payment, or inspection. The tracking detail names the reason where available.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-008",
+      "topic": "customs",
+      "question": "Who pays import duty?",
+      "answer": "Duty is payable by the party named in the Incoterm on the commercial invoice - usually the recipient under DAP terms.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-009",
+      "topic": "customs",
+      "question": "What is an HS code?",
+      "answer": "A Harmonised System code classifies goods for customs. It determines duty rate and any import restrictions.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-010",
+      "topic": "packaging",
+      "question": "How should I pack fragile items?",
+      "answer": "Use a double-walled box with at least 5 cm of cushioning on every side and mark the outer box as fragile.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-011",
+      "topic": "packaging",
+      "question": "Do you supply packaging materials?",
+      "answer": "Standard boxes and envelopes are available at staffed locations and through the online supply order form.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-012",
+      "topic": "billing",
+      "question": "When am I charged for a shipment?",
+      "answer": "Charges are raised when the shipment is collected or dropped off, and appear on the next invoice for account customers.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-013",
+      "topic": "billing",
+      "question": "What is a dimensional weight surcharge?",
+      "answer": "Where a parcel's volumetric weight exceeds its actual weight, the higher of the two is used to rate the shipment.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-014",
+      "topic": "returns",
+      "question": "How do I return an item?",
+      "answer": "Use the returns label supplied by the merchant, or create one through the returns portal if the merchant supports it.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-015",
+      "topic": "returns",
+      "question": "How long does a refund take?",
+      "answer": "Refunds are issued by the merchant, not the carrier. Timing depends on the merchant's own policy.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-016",
+      "topic": "shipping",
+      "question": "Is there a charge for a delivery is refused?",
+      "answer": "Guidance for a delivery is refused is published in the shipping section of the help centre.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-017",
+      "topic": "shipping",
+      "question": "Can I schedule a collection after booking?",
+      "answer": "Guidance for schedule a collection is published in the shipping section of the help centre.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-018",
+      "topic": "shipping",
+      "question": "What happens if upgrade the service level?",
+      "answer": "Guidance for upgrade the service level is published in the shipping section of the help centre.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-019",
+      "topic": "shipping",
+      "question": "How do I a weekend delivery?",
+      "answer": "Guidance for a weekend delivery is published in the shipping section of the help centre.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-020",
+      "topic": "shipping",
+      "question": "Who do I contact about shipping to a PO box?",
+      "answer": "Guidance for shipping to a PO box is published in the shipping section of the help centre.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-021",
+      "topic": "tracking",
+      "question": "Is there a charge for a scan is missing?",
+      "answer": "Guidance for a scan is missing is published in the tracking section of the help centre.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-022",
+      "topic": "tracking",
+      "question": "Can I share tracking with a recipient after booking?",
+      "answer": "Guidance for share tracking with a recipient is published in the tracking section of the help centre.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-023",
+      "topic": "tracking",
+      "question": "Can I get delivery notifications after booking?",
+      "answer": "Guidance for get delivery notifications is published in the tracking section of the help centre.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-024",
+      "topic": "tracking",
+      "question": "What happens if a proof of delivery?",
+      "answer": "Guidance for a proof of delivery is published in the tracking section of the help centre.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-025",
+      "topic": "tracking",
+      "question": "Can I tracking an older shipment after booking?",
+      "answer": "Guidance for tracking an older shipment is published in the tracking section of the help centre.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-026",
+      "topic": "customs",
+      "question": "How do I a commercial invoice is wrong?",
+      "answer": "Guidance for a commercial invoice is wrong is published in the customs section of the help centre.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-027",
+      "topic": "customs",
+      "question": "What happens if declare a gift shipment?",
+      "answer": "Guidance for declare a gift shipment is published in the customs section of the help centre.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-028",
+      "topic": "customs",
+      "question": "Is there a charge for pay duty in advance?",
+      "answer": "Guidance for pay duty in advance is published in the customs section of the help centre.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-029",
+      "topic": "customs",
+      "question": "Can I a temporary import after booking?",
+      "answer": "Guidance for a temporary import is published in the customs section of the help centre.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-030",
+      "topic": "customs",
+      "question": "Who do I contact about restricted goods?",
+      "answer": "Guidance for restricted goods is published in the customs section of the help centre.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-031",
+      "topic": "packaging",
+      "question": "Can I reuse an old box after booking?",
+      "answer": "Guidance for reuse an old box is published in the packaging section of the help centre.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-032",
+      "topic": "packaging",
+      "question": "Is there a charge for ship a liquid?",
+      "answer": "Guidance for ship a liquid is published in the packaging section of the help centre.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-033",
+      "topic": "packaging",
+      "question": "Can I pack a laptop after booking?",
+      "answer": "Guidance for pack a laptop is published in the packaging section of the help centre.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-034",
+      "topic": "packaging",
+      "question": "What happens if an oversized item?",
+      "answer": "Guidance for an oversized item is published in the packaging section of the help centre.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-035",
+      "topic": "packaging",
+      "question": "What happens if palletised freight?",
+      "answer": "Guidance for palletised freight is published in the packaging section of the help centre.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-036",
+      "topic": "billing",
+      "question": "Who do I contact about an invoice is disputed?",
+      "answer": "Guidance for an invoice is disputed is published in the billing section of the help centre.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-037",
+      "topic": "billing",
+      "question": "Can I change payment method after booking?",
+      "answer": "Guidance for change payment method is published in the billing section of the help centre.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-038",
+      "topic": "billing",
+      "question": "How do I a credit account?",
+      "answer": "Guidance for a credit account is published in the billing section of the help centre.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-039",
+      "topic": "billing",
+      "question": "Who do I contact about a duplicate charge?",
+      "answer": "Guidance for a duplicate charge is published in the billing section of the help centre.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-040",
+      "topic": "billing",
+      "question": "What happens if VAT on duty?",
+      "answer": "Guidance for VAT on duty is published in the billing section of the help centre.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-041",
+      "topic": "returns",
+      "question": "How do I a return is refused?",
+      "answer": "Guidance for a return is refused is published in the returns section of the help centre.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-042",
+      "topic": "returns",
+      "question": "Who do I contact about print a return label?",
+      "answer": "Guidance for print a return label is published in the returns section of the help centre.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-043",
+      "topic": "returns",
+      "question": "Can I a damaged return after booking?",
+      "answer": "Guidance for a damaged return is published in the returns section of the help centre.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-044",
+      "topic": "returns",
+      "question": "What happens if returning internationally?",
+      "answer": "Guidance for returning internationally is published in the returns section of the help centre.",
+      "status": "published"
+    },
+    {
+      "faq_id": "FAQ-045",
+      "topic": "returns",
+      "question": "Is there a charge for a late return?",
+      "answer": "Guidance for a late return is published in the returns section of the help centre.",
+      "status": "published"
+    }
+  ]
+}

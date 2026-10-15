@@ -1,0 +1,249 @@
+{
+  "generated_seed": 20261019,
+  "documents": [
+    {
+      "doc_id": "SRC-01",
+      "topic": "customs",
+      "title": "Customs Documentation Standard",
+      "version": "2026-09-01",
+      "passages": [
+        {
+          "passage_id": "SRC-01-P1",
+          "text": "A commercial invoice must carry a specific goods description; 'samples' or 'spare parts' alone is insufficient for classification."
+        },
+        {
+          "passage_id": "SRC-01-P2",
+          "text": "Where the declared value exceeds the de-minimis threshold of the destination, a formal entry is required."
+        },
+        {
+          "passage_id": "SRC-01-P3",
+          "text": "Country of origin must be stated per line item, not per shipment."
+        }
+      ]
+    },
+    {
+      "doc_id": "SRC-02",
+      "topic": "customs",
+      "title": "Duty and Tax Responsibility Guide",
+      "version": "2026-09-01",
+      "passages": [
+        {
+          "passage_id": "SRC-02-P1",
+          "text": "Under DAP terms the recipient settles duty and tax before release."
+        },
+        {
+          "passage_id": "SRC-02-P2",
+          "text": "Under DDP terms the shipper is billed for duty, tax and the associated handling fee."
+        }
+      ]
+    },
+    {
+      "doc_id": "SRC-03",
+      "topic": "shipping",
+      "title": "Service Level Definitions",
+      "version": "2026-09-01",
+      "passages": [
+        {
+          "passage_id": "SRC-03-P1",
+          "text": "Express services are measured against an end-of-day commitment on the stated transit day."
+        },
+        {
+          "passage_id": "SRC-03-P2",
+          "text": "Economy services carry no time-of-day commitment."
+        }
+      ]
+    },
+    {
+      "doc_id": "SRC-04",
+      "topic": "shipping",
+      "title": "Address Change Policy",
+      "version": "2026-09-01",
+      "passages": [
+        {
+          "passage_id": "SRC-04-P1",
+          "text": "An in-transit address change is permitted within the destination country, once per shipment."
+        },
+        {
+          "passage_id": "SRC-04-P2",
+          "text": "Address changes are not permitted after the first delivery attempt."
+        }
+      ]
+    },
+    {
+      "doc_id": "SRC-05",
+      "topic": "tracking",
+      "title": "Scan Event Reference",
+      "version": "2026-09-01",
+      "passages": [
+        {
+          "passage_id": "SRC-05-P1",
+          "text": "A scan gap of up to 72 hours is normal during international line-haul movement."
+        },
+        {
+          "passage_id": "SRC-05-P2",
+          "text": "An exception scan always carries a reason code; the absence of a scan is not itself an exception."
+        }
+      ]
+    },
+    {
+      "doc_id": "SRC-06",
+      "topic": "packaging",
+      "title": "Packaging Standard for Fragile Goods",
+      "version": "2026-09-01",
+      "passages": [
+        {
+          "passage_id": "SRC-06-P1",
+          "text": "Fragile goods require a double-walled outer box."
+        },
+        {
+          "passage_id": "SRC-06-P2",
+          "text": "Cushioning must be at least 5 cm on every face, and the contents must not shift when the box is shaken."
+        }
+      ]
+    },
+    {
+      "doc_id": "SRC-07",
+      "topic": "packaging",
+      "title": "Lithium Battery Shipping Rules",
+      "version": "2026-09-01",
+      "passages": [
+        {
+          "passage_id": "SRC-07-P1",
+          "text": "Devices containing lithium batteries must be declared."
+        },
+        {
+          "passage_id": "SRC-07-P2",
+          "text": "Loose lithium cells may not travel by air under standard service."
+        }
+      ]
+    },
+    {
+      "doc_id": "SRC-08",
+      "topic": "billing",
+      "title": "Dimensional Weight Calculation",
+      "version": "2026-09-01",
+      "passages": [
+        {
+          "passage_id": "SRC-08-P1",
+          "text": "Volumetric weight is length x width x height in centimetres divided by 5000."
+        },
+        {
+          "passage_id": "SRC-08-P2",
+          "text": "The greater of actual and volumetric weight is used to rate the shipment."
+        }
+      ]
+    },
+    {
+      "doc_id": "SRC-09",
+      "topic": "billing",
+      "title": "Invoice Dispute Procedure",
+      "version": "2026-09-01",
+      "passages": [
+        {
+          "passage_id": "SRC-09-P1",
+          "text": "A disputed invoice line must be raised within 30 days of the invoice date."
+        },
+        {
+          "passage_id": "SRC-09-P2",
+          "text": "Payment of undisputed lines is expected while a dispute is open."
+        }
+      ]
+    },
+    {
+      "doc_id": "SRC-10",
+      "topic": "returns",
+      "title": "Returns Handling Standard",
+      "version": "2026-09-01",
+      "passages": [
+        {
+          "passage_id": "SRC-10-P1",
+          "text": "A return label remains valid for 30 days from issue."
+        },
+        {
+          "passage_id": "SRC-10-P2",
+          "text": "Returns are consigned to the merchant's nominated address, not the original origin."
+        }
+      ]
+    },
+    {
+      "doc_id": "SRC-11",
+      "topic": "shipping",
+      "title": "Hazardous Goods Acceptance Summary",
+      "version": "2026-09-01",
+      "passages": [
+        {
+          "passage_id": "SRC-11-P1",
+          "text": "Dangerous goods require a shipper's declaration and trained acceptance."
+        },
+        {
+          "passage_id": "SRC-11-P2",
+          "text": "Consumer aerosols are restricted by air and may travel by road only."
+        }
+      ]
+    },
+    {
+      "doc_id": "SRC-12",
+      "topic": "customs",
+      "title": "Temporary Import Overview",
+      "version": "2026-09-01",
+      "passages": [
+        {
+          "passage_id": "SRC-12-P1",
+          "text": "Goods entering temporarily for exhibition may use an ATA Carnet."
+        },
+        {
+          "passage_id": "SRC-12-P2",
+          "text": "A Carnet must be presented at both entry and exit."
+        }
+      ]
+    },
+    {
+      "doc_id": "SRC-13",
+      "topic": "tracking",
+      "title": "Proof of Delivery Guidance",
+      "version": "2026-09-01",
+      "passages": [
+        {
+          "passage_id": "SRC-13-P1",
+          "text": "Proof of delivery includes the delivery timestamp and, where captured, the signatory name."
+        },
+        {
+          "passage_id": "SRC-13-P2",
+          "text": "A photo of placement is captured where no signature is required."
+        }
+      ]
+    },
+    {
+      "doc_id": "SRC-14",
+      "topic": "shipping",
+      "title": "Collection Scheduling Rules",
+      "version": "2026-09-01",
+      "passages": [
+        {
+          "passage_id": "SRC-14-P1",
+          "text": "A collection booked before the daily cut-off is serviced the same business day."
+        },
+        {
+          "passage_id": "SRC-14-P2",
+          "text": "Saturday collection requires a premium service."
+        }
+      ]
+    },
+    {
+      "doc_id": "SRC-15",
+      "topic": "billing",
+      "title": "Surcharge Reference",
+      "version": "2026-09-01",
+      "passages": [
+        {
+          "passage_id": "SRC-15-P1",
+          "text": "A remote-area surcharge applies to postcodes listed in the annual schedule."
+        },
+        {
+          "passage_id": "SRC-15-P2",
+          "text": "Fuel surcharge is revised monthly and applies to the base rate."
+        }
+      ]
+    }
+  ]
+}

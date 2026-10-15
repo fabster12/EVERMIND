@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A per-lab learning map for ADK, Copilot engineering, and OpenSpec, with FedEx greenfield capstone options.">
+<title>Lab Learning Map and Capstone Options</title>
+<style>
+/* FedEx house style - matches the capstone Word documents.
+   Brand: purple #4D148C, orange #FF6600. */
+
+:root {
+  --purple: #4D148C;
+  --purple-dark: #3A0F6B;
+  --purple-mid: #6B3BA8;
+  --orange: #FF6600;
+  --paper: #ffffff;
+  --ink: #1A1A1A;
+  --muted: #595959;
+  --faint: #767676;
+  --rule: #D9D2E4;
+  --wash: #F7F5FB;
+  --tint: #F2EEF7;
+  --shadow: 0 1px 2px rgba(77, 20, 140, .05), 0 6px 20px rgba(77, 20, 140, .06);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #15121C;
+    --ink: #ECE8F2;
+    --muted: #B4ACC4;
+    --faint: #8F86A3;
+    --rule: #342B46;
+    --wash: #1C1826;
+    --tint: #221B30;
+    --purple: #C4A7EA;
+    --purple-mid: #A98BD4;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 6px 20px rgba(0, 0, 0, .25);
+  }
+}
+
+:root[data-theme="dark"] {
+  --paper: #15121C;
+  --ink: #ECE8F2;
+  --muted: #B4ACC4;
+  --faint: #8F86A3;
+  --rule: #342B46;
+  --wash: #1C1826;
+  --tint: #221B30;
+  --purple: #C4A7EA;
+  --purple-mid: #A98BD4;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 6px 20px rgba(0, 0, 0, .25);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------------------------------------------------------- masthead */
+
+.masthead {
+  background: linear-gradient(135deg, var(--purple-dark) 0%, var(--purple) 55%, var(--purple-mid) 100%);
+  border-bottom: 5px solid var(--orange);
+  color: #fff;
+  padding: 2.4rem 0 2rem;
+}
+
+.masthead-inner {
+  max-width: 1180px;
+  margin: auto;
+  padding: 0 2rem;
+}
+
+.kicker {
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #E4D7F5;
+  margin: 0 0 .55rem;
+}
+
+.masthead h1 {
+  font-size: clamp(1.8rem, 4.2vw, 2.7rem);
+  line-height: 1.15;
+  font-weight: 700;
+  margin: 0 0 .7rem;
+  color: #fff;
+  max-width: 24ch;
+  border: 0;
+  padding: 0;
+}
+
+.standfirst {
+  margin: 0;
+  max-width: 68ch;
+  font-size: 1.04rem;
+  color: #E9DFF7;
+}
+
+.masthead-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem 1.6rem;
+  margin-top: 1.4rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid rgba(255, 255, 255, .22);
+  font-size: .82rem;
+  color: #D8C8EF;
+}
+
+.masthead-meta b {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ------------------------------------------------------------ nav */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+}
+
+nav {
+  max-width: 1180px;
+  margin: auto;
+  padding: .7rem 2rem;
+  display: flex;
+  gap: .4rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+nav a {
+  font-size: .84rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-decoration: none;
+  padding: .36rem .7rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  transition: color .15s, background .15s, border-color .15s;
+}
+
+nav a:hover {
+  color: var(--purple);
+  background: var(--tint);
+  border-color: var(--rule);
+}
+
+nav a:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
+}
+
+/* ----------------------------------------------------------- main */
+
+main {
+  max-width: 1180px;
+  margin: auto;
+  padding: 2.2rem 2rem 5rem;
+}
+
+a {
+  color: var(--purple);
+  text-underline-offset: .18em;
+  text-decoration-thickness: 1px;
+  overflow-wrap: anywhere;
+}
+
+a:hover { color: var(--orange); }
+
+a:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.22;
+  font-weight: 700;
+  text-wrap: balance;
+}
+
+main > h1 {
+  font-size: 2.1rem;
+  color: var(--purple);
+  margin: .2rem 0 1rem;
+}
+
+h2 {
+  font-size: 1.45rem;
+  color: var(--purple);
+  margin: 3.1rem 0 1rem;
+  padding-bottom: .5rem;
+  border-bottom: 2px solid var(--orange);
+}
+
+h2::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: var(--rule);
+  margin-bottom: 1.5rem;
+}
+
+main > h2:first-of-type::before { display: none; }
+
+h3 {
+  font-size: 1.1rem;
+  color: var(--ink);
+  margin: 2rem 0 .5rem;
+}
+
+h4 {
+  font-size: .98rem;
+  color: var(--muted);
+  margin: 1.4rem 0 .4rem;
+}
+
+p { max-width: 82ch; margin: 0 0 1rem; }
+
+main > p:first-of-type {
+  font-size: 1.08rem;
+  color: var(--muted);
+}
+
+strong { font-weight: 600; color: var(--ink); }
+
+ul, ol { max-width: 82ch; padding-left: 1.3rem; }
+li { margin: .32rem 0; }
+li::marker { color: var(--purple); }
+
+td code, th code { white-space: nowrap; }
+
+code {
+  font-family: "Cascadia Mono", Consolas, "SF Mono", Menlo, monospace;
+  font-size: .87em;
+  background: var(--tint);
+  color: var(--purple);
+  padding: .12em .42em;
+  border-radius: 4px;
+  border: 1px solid var(--rule);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) code { color: var(--ink); }
+}
+
+/* ---------------------------------------------------------- tables */
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 1.2rem 0 1.8rem;
+  font-size: .9rem;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+thead th {
+  background: var(--purple);
+  color: #fff;
+  font-weight: 600;
+  font-size: .82rem;
+  letter-spacing: .02em;
+  text-align: left;
+  padding: .7rem .85rem;
+  vertical-align: bottom;
+  border-right: 1px solid rgba(255, 255, 255, .16);
+}
+
+thead th:last-child { border-right: 0; }
+
+tbody td {
+  padding: .68rem .85rem;
+  vertical-align: top;
+  border-top: 1px solid var(--rule);
+  color: var(--ink);
+}
+
+tbody tr:nth-child(even) { background: var(--wash); }
+tbody tr:hover { background: var(--tint); }
+
+/* First column carries the row's subject in most of these tables. */
+tbody td:first-child {
+  font-weight: 600;
+  color: var(--purple);
+  min-width: 11ch;
+}
+
+/* Keep the widest tables readable rather than letting one long cell
+   squeeze the first column to nothing. */
+.table-scroll table { min-width: 44rem; }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) thead th { background: #3A2A52; }
+}
+
+/* A table wider than the screen scrolls on its own rather than
+   forcing the whole page sideways. */
+.table-scroll {
+  overflow-x: auto;
+  margin: 1.2rem 0 1.8rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-scroll table { margin: 0; }
+
+/* ---------------------------------------------------------- footer */
+
+footer {
+  border-top: 1px solid var(--rule);
+  background: var(--wash);
+  margin-top: 3rem;
+}
+
+footer p {
+  max-width: 1180px;
+  margin: auto;
+  padding: 1.6rem 2rem;
+  font-size: .84rem;
+  color: var(--faint);
+}
+
+footer p::before {
+  content: "";
+  display: block;
+  width: 44px;
+  height: 3px;
+  background: var(--orange);
+  margin-bottom: .9rem;
+}
+
+/* ----------------------------------------------------------- misc */
+
+::selection {
+  background: var(--orange);
+  color: #fff;
+}
+
+@media (max-width: 720px) {
+  .masthead { padding: 1.8rem 0 1.5rem; }
+  .masthead-inner, nav, main, footer p { padding-left: 1rem; padding-right: 1rem; }
+  main { padding-top: 1.6rem; }
+  h2 { font-size: 1.28rem; }
+  table { font-size: .84rem; }
+  thead th, tbody td { padding: .55rem .6rem; }
+}
+
+@media print {
+  header { position: static; }
+  .masthead {
+    background: var(--purple) !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  nav { display: none; }
+  table, tr, li { break-inside: avoid; }
+  h2, h3 { break-after: avoid; }
+  main { max-width: none; }
+  a { text-decoration: none; color: var(--ink); }
+}
+</style>
+</head>
+</head><body>  <div class="masthead"><div class="masthead-inner"><p class="kicker">FedEx &nbsp;|&nbsp; FDE Training Program</p><h1>Lab Learning Map &amp; Capstone Options</h1><p class="standfirst">How 29 lab directories across ADK, Copilot engineering and OpenSpec map to what you learn, why you learn it, and where it can be used &mdash; with greenfield capstone options scoped against that evidence.</p><p class="masthead-meta"><span><b>Reviewed</b> 14 October 2026</span><span><b>Scope</b> WA3915-1-3-0, AIC-1102, AIC-2101</span><span><b>Status</b> Planning reference, not a certification</span></p></div></div><header>    <nav aria-label="Report sections">      <a href="#overview">Overview</a>      <a href="#adk-labs">ADK Labs</a>      <a href="#copilot-labs">Copilot Labs</a>      <a href="#spec-labs">OpenSpec Labs</a>      <a href="#fedex-ideas">FedEx Options</a>      <a href="#capstone">Capstone Plan</a>    </nav>  </header>  <main id="report"><p>This report maps 29 lab directories to what you learn, why you learn it, and where it can be used. It is a planning reference, not a certification that every exercise is completed or production-ready. Learning objectives are grounded in the local course guide, lab READMEs, and solution walkthroughs; real-world applications and capstone ideas are recommendations.</p><p><a id="overview"></a></p><h2 id="how-the-courses-fit-together">1. How the Courses Fit Together</h2><div class="table-scroll"><table><thead><tr><th>Course folder</th><th>Main learning area</th><th>Intent</th><th>Capstone contribution</th></tr></thead><tbody><tr><td><code>WA3915-1-3-0</code></td><td>Build and operate AI agents with Google's Agent Development Kit (ADK).</td><td>Make an application that uses models, tools, state, workflows, and controls to perform a task.</td><td>The runtime agent: structured outputs, authorized tools, guardrails, tests, evaluations, and deployment.</td></tr><tr><td><code>AIC-1102</code></td><td>Use GitHub Copilot to develop software, investigate issues, and automate engineering work.</td><td>Learn to give useful context, constrain agent actions, and review and verify generated work.</td><td>The engineering process: repository conventions, implementation, code review, tests, MCP tool design, and CI.</td></tr><tr><td><code>AIC-2101</code></td><td>Spec-driven development with OpenSpec, using the Beanbotics application.</td><td>Preserve the intended behavior in reviewable requirements instead of relying on chat history or AI assumptions.</td><td>The project contract: proposals, scenarios, design decisions, tasks, verification, and archived changes.</td></tr></tbody></table></div><p><strong>Important distinction:</strong> Copilot helps you build the application; an ADK agent runs inside the application; OpenSpec records what the application should do. MCP connects an agent/client to tools. A2A connects agents to other agents. These are complementary, not interchangeable.</p><p><strong>Reading order:</strong> Use Sections 3-5 as the per-folder learning catalog. Use Section 6 to choose a problem, and Section 7 to scope and demonstrate it. Learning a technique does not mean the capstone must use it: a good project uses the smallest set of techniques that produces a measurable improvement.</p><h2 id="greenfield-and-brownfield">2. Greenfield and Brownfield</h2><ul><li><strong>Greenfield:</strong> Build a new application. Start with a validated problem, users, explicit requirements, synthetic data, and narrowly scoped interfaces. There is no existing project codebase to preserve.</li><li><strong>Brownfield:</strong> Modify an existing application. First establish its architecture, business rules, tests, ownership, integration contracts, and migration constraints. Preserve current behavior unless a change is intentional.</li><li>These skills support either approach. The FedEx proposals below are <strong>greenfield only</strong> because no existing internal project, architecture, or authorized integration has been identified. An idea may overlap an existing tool; stakeholder discovery must check that before investment.</li></ul><h3 id="choose-the-mechanism-before-the-framework">Choose the Mechanism Before the Framework</h3><div class="table-scroll"><table><thead><tr><th>Need</th><th>Start with</th><th>Add more only when</th></tr></thead><tbody><tr><td>Exact validation, calculations, access decisions, and state transitions.</td><td>Deterministic application code and tests.</td><td>There is unstructured input that needs interpretation; keep the authoritative rule in code or an approved policy service.</td></tr><tr><td>Classifying or summarizing supplied unstructured text.</td><td>One schema-constrained model step with validated input/output.</td><td>Evaluation demonstrates that simpler rules or templates are inadequate.</td></tr><tr><td>Deciding which approved information to retrieve.</td><td>An agent with narrowly scoped tools.</td><td>The task needs dynamic tool selection rather than a fixed retrieval sequence.</td></tr><tr><td>Combining several known processing steps.</td><td>An explicit application/workflow pipeline.</td><td>Branching or bounded recovery is required; avoid an unconstrained autonomous loop.</td></tr><tr><td>Making a tool available to compatible agent clients.</td><td>A direct service adapter first; MCP when interoperability is useful.</td><td>Multiple clients need standardized discovery/calling. Tool schemas and descriptions are not business authorization controls.</td></tr><tr><td>Delegating to an independently operated specialist.</td><td>A local function or agent first; A2A when there is a real agent-service boundary.</td><td>Separate ownership, deployment, or specialization justifies distributed operation.</td></tr></tbody></table></div><p><a id="adk-labs"></a></p><h2 id="wa3915-1-3-0-building-runtime-agents">3. WA3915-1-3-0: Building Runtime Agents</h2><p>Location: <code>C:\LabFiles\WA3915-1-3-0\LabFiles</code>. Nine lab directories. Evidence: the local <a href="../WA3915-1-3-0/WA3915-1.3.0-LabGuide.html">ADK lab guide</a> and <a href="../WA3915-1-3-0/WA3915-1.3.0-StudentLessonGuide.html">student lesson guide</a>.</p><div class="table-scroll"><table><thead><tr><th>Lab folder</th><th>What is learned</th><th>Intent of the exercise</th><th>Real-world use</th></tr></thead><tbody><tr><td><code>building-a-first-adk-agent</code></td><td>Define an agent and instructions, configure model backends, run it synchronously/asynchronously, and personalize instructions with session state.</td><td>Understand the agent/runtime contract and how a conversation becomes events and responses.</td><td>A new read-only service assistant. For an existing application, prototype an agent adapter around approved services without replacing business logic.</td></tr><tr><td><code>building-an-adk-document-classifier</code></td><td>Constrain outputs with a schema, validate document classifications, retry low-confidence results, and route to specialist agents.</td><td>Turn unstructured model output into a predictable contract that downstream code can consume.</td><td>Route shipment paperwork, customer messages, or incident reports into explicit categories; send uncertain cases for review. Schema validity is not proof that a classification is correct.</td></tr><tr><td><code>building-a-multi-tool-adk-agent</code></td><td>Expose functions as tools, share state between tools, and connect an external tool through MCP.</td><td>Let the model request information or actions while deterministic code performs the operation.</td><td>Read shipment events and approved policy information through narrow APIs. Enforce authorization and argument validation in the tools, not merely in the prompt.</td></tr><tr><td><code>guardrails-with-callbacks-and-plugins</code></td><td>Use before/after callbacks; short-circuit unsafe requests; redact output; log model/tool calls; cache responses; replace weak answers with a fallback.</td><td>Separate reusable safety, observability, and efficiency controls from the agent's task instructions.</td><td>A shared control layer for customer-service agents: logging, policy checks, PII handling, and safe fallback. Production caching needs freshness and identity boundaries; the lab cache is illustrative.</td></tr><tr><td><code>building-an-adk-evaluation-pipeline</code></td><td>Define evaluation cases and thresholds, run CLI/pytest evaluations, add LLM-as-judge criteria, and check hallucinations.</td><td>Measure behavioral quality across examples rather than accepting one successful conversation.</td><td>Regression checks before changing a model, prompt, or tool. Assess factual support, correct tool use, and safe handling of unknown information; review judge limitations.</td></tr><tr><td><code>research-and-report-workflow</code></td><td>Compose a research/report workflow, branch by request type, pass intermediate results, and recover from a failing node.</td><td>Make multi-step work explicit, inspectable, and recoverable.</td><td>An evidence-backed exception summary assembled from shipment facts and approved operating guidance. Track provenance and timestamps and distinguish tool failures from missing data.</td></tr><tr><td><code>multi-agent-a2a-workflow</code></td><td>Build a local specialist team, expose/consume a remote agent with A2A, use agents as tools, and apply a team-wide plugin.</td><td>Learn delegation boundaries and communication between specialized agents.</td><td>Separate document review and tracking analysis if they genuinely have different ownership or expertise. Do not introduce a distributed agent team until one agent demonstrably cannot meet the need.</td></tr><tr><td><code>unit-testing-an-adk-agent</code></td><td>Use mocked model backends and deterministic tests for happy/error paths; combine checks in a CI-style command.</td><td>Verify orchestration and tool behavior without API costs or unpredictable live model answers.</td><td>Test that unauthorized tools are never called, missing shipments produce a safe result, and guardrails still run as intended. Keep live-model evaluations separate from deterministic unit tests.</td></tr><tr><td><code>deploying-an-adk-agent-to-agent-runtime</code></td><td>Serve an agent locally, exercise endpoints, enable trace export, deploy to Agent Runtime, and inspect spans/usage/cost or alternative targets.</td><td>Move from a local demonstration to an observable hosted service.</td><td>A controlled pilot endpoint with identity, secret management, monitoring, budgets, and rollback. Cloud access and credentials are prerequisites; local serving does not establish production readiness.</td></tr></tbody></table></div><h3 id="evidence-that-you-can-reuse-the-skills">Evidence That You Can Reuse the Skills</h3><ul><li>For the first-agent and tools labs: explain one invocation from request to events, tool result, and answer; show which code actually authorizes and executes the tool.</li><li>For classification and workflows: demonstrate a schema-valid result, a validation/error path, an uncertain result, and bounded recovery. A model's self-reported confidence is not a calibrated probability of correctness.</li><li>For guardrails: show both unchanged and intercepted paths, including tool-call steps and combined-plugin/cache-hit behavior. Count actual model invocations separately from before-hook entries.</li><li>For tests and evaluations: keep deterministic test results separate from model-quality scores. Record model, prompt, tool, policy, and evaluation-set versions so a later change can be compared fairly.</li><li>For deployment: demonstrate endpoint access, traces, failure handling, and usage accounting. A local demo or walkthrough is not evidence that a cloud deployment has been completed.</li></ul><p><strong>Compatibility checkpoint:</strong> The lesson guide explicitly cautions that combining <code>output_schema</code> with <code>tools</code> depends on model support. Do not assume that one tool-using agent can also enforce the chosen output schema on every backend. Verify the exact provider/model/SDK combination, or retrieve facts in application code and pass them to a separate schema-output step. See <a href="../WA3915-1-3-0/WA3915-1.3.0-StudentLessonGuide.html#_the_model_support_caveat">the model-support caveat</a>.</p><h3 id="what-the-current-plugins-lab-actually-demonstrates">What the Current Plugins Lab Actually Demonstrates</h3><p>The current lab provides a useful capstone pattern: one agent answers order-status questions, agent-local callbacks handle selected input/output checks, and application-wide plugins provide logging, caching, or response intervention.</p><ul><li>Returning a response from a before-model hook can skip the model call. Returning <code>None</code> allows that hook to leave normal execution unchanged.</li><li>An after-model hook can replace a response, but replacing a short answer is <strong>not</strong> a retry and <strong>not</strong> a factual-quality check.</li><li>Logs make hook execution observable. A before-model log does not by itself prove that a paid model request occurred: a later hook may short-circuit it. Logs also need redaction and access controls; tool arguments can themselves contain sensitive information.</li><li>Multiple configured plugins are not proof that every hook runs on every path. Verify ordering, early returns, cache hits, and guardrail interactions in the installed SDK.</li></ul><h3 id="what-must-change-before-production">What Must Change Before Production</h3><div class="table-scroll"><table><thead><tr><th>Lab simplification</th><th>Production concern</th><th>Appropriate extension</th></tr></thead><tbody><tr><td>The cache key is the latest user text.</td><td>Identical text can refer to different users, shipments, conversation history, tools, or policies. Tracking information also changes.</td><td>Use an authorization-scoped key covering relevant context and model/prompt/tool versions; define TTL/invalidation. Prefer caching suitable tool data rather than mutable shipment answers.</td></tr><tr><td>The cache stores responses that have content parts.</td><td>A response can contain a tool call rather than a final answer. A shared cache could expose information across identities.</td><td>Do not treat tool-call responses as reusable final answers. Test tenant/user isolation and cache only explicitly eligible responses.</td></tr><tr><td>Injection blocking matches one phrase.</td><td>Injection can use paraphrases, documents, or tool results.</td><td>Treat retrieved content as untrusted data; constrain tools and enforce permissions outside the model. Keep adversarial tests and human escalation.</td></tr><tr><td>A regex redacts card-shaped digits.</td><td>It is not complete PII detection; it may miss other formats or redact legitimate identifiers.</td><td>Use data minimization and a reviewed detection policy for the actual domain, including logs. Keep sensitive values out of prompts where possible.</td></tr><tr><td>A quality gate checks stripped text length.</td><td>Long answers can be wrong; short answers can be correct.</td><td>Define task-specific completeness and evidence requirements, unknown states, and fallback/escalation criteria.</td></tr><tr><td>Sample orders and in-memory state.</td><td>No durable system of record, concurrency design, or verified access boundary.</td><td>Add persistent services, explicit contracts, auditability, and approved integration adapters when the pilot requires them.</td></tr></tbody></table></div><p><a id="copilot-labs"></a></p><h2 id="aic-1102-ai-assisted-software-engineering">4. AIC-1102: AI-Assisted Software Engineering</h2><p>Location: <code>C:\LabFiles\AIC-1102\LabFiles</code>. Fourteen lab directories. The emphasis is how engineers work with Copilot, not how to add an LLM to every business feature. Each exercise uses a small application as the learning surface.</p><div class="table-scroll"><table><thead><tr><th>Lab folder</th><th>What is learned</th><th>Intent of the exercise</th><th>Real-world use</th></tr></thead><tbody><tr><td><code>using-uv</code></td><td>Set up Python environments and dependencies and run the project with <code>uv</code>.</td><td>Establish a repeatable development environment.</td><td>Reproducible capstone setup and CI; reduce interpreter/dependency mismatches. Use the project's lock/install policy rather than assuming every lab has identical packaging.</td></tr><tr><td><code>context-rich-problem-solving</code></td><td>Investigate an event pipeline across ingestion, transformation, enrichment, export, shared models, and runtime defaults.</td><td>Give the assistant enough relevant cross-file context to find the actual controlling behavior.</td><td>Diagnose shipment-event processing defects or understand an unfamiliar service before a change. Useful in brownfield work; apply the same discipline to new capstone modules.</td></tr><tr><td><code>structured-reasoning</code></td><td>Plan and perform a structural refactor of a messy project into a conventional source layout, distinguishing similar filenames.</td><td>Use an explicit plan and constraints to preserve behavior while reorganizing code.</td><td>Modernize a legacy repository or establish maintainable boundaries early in a new project. Validate imports, scripts, and tests after moves.</td></tr><tr><td><code>guided-multi-step-coding-task</code></td><td>Complete a Flask task API with single-item retrieval, updates, deletion, status filtering, input validation, and success/error tests.</td><td>Decompose a feature brief into small, verifiable API changes instead of one unconstrained generation request.</td><td>Build an exception-review API incrementally. The lab supplies CRUD/validation practice; business-specific transition rules still require a separate specification.</td></tr><tr><td><code>feature-scaffolding</code></td><td>Scaffold a notification service around a feature brief; the local artifact uses domain protocols and adapters.</td><td>Turn intent into a coherent application structure and inspect the generated baseline.</td><td>Start a new notification/review component with replaceable delivery adapters. The local email/SMS/push adapters are stubs; the in-process scheduler is not a complete durable delivery system.</td></tr><tr><td><code>custom-configuration</code></td><td>Create repository and path-specific instructions and other agent configuration for a multi-layer application.</td><td>Make engineering conventions and protected areas explicit rather than repeating them in every prompt.</td><td>Standardize coding style, test requirements, migration rules, and generated-file boundaries for a team. Instructions guide behavior; they do not replace enforced permissions or CI.</td></tr><tr><td><code>debugging-refactoring</code></td><td>Use failing tests to locate deliberate inventory/pricing/cart defects and audit whether fixes address root causes.</td><td>Evaluate autonomous debugging against evidence instead of accepting a symptom-level patch.</td><td>Repair calculation or event-processing defects with a regression test and minimal blast radius. Especially valuable in brownfield systems.</td></tr><tr><td><code>code-review-and-refinement</code></td><td>Review an order processor whose minimal tests pass and decide which findings deserve fixes and stronger tests.</td><td>Recognize that passing tests and running code do not guarantee correctness.</td><td>Review generated shipment workflows for edge cases, security, monetary calculations, and behavioral regressions before merging.</td></tr><tr><td><code>test-suite-generation</code></td><td>Find partial coverage in an orders library, generate tests, and judge their usefulness.</td><td>Build behavior-focused coverage rather than chase a coverage percentage.</td><td>Exercise invalid identifiers, missing events, boundary times, tool failures, and authorization failures. Inspect whether the assertions would fail on an actual bug.</td></tr><tr><td><code>cloud-agent-workflow</code></td><td>Specify a ticket-status PATCH endpoint in a GitHub issue, including error responses, UTC update timestamps, tests, and exclusions; review the coding agent's implementation.</td><td>Learn that issue quality, acceptance criteria, and human review determine useful delegated results.</td><td>Delegate a bounded capstone feature through an issue/PR workflow. This lab permits any valid status-to-status update; do not mistake it for a restricted operational state machine.</td></tr><tr><td><code>mcp-tool-design</code></td><td>Build/register a log-reading MCP server and observe how tool descriptions and schemas affect selection.</td><td>Design discoverable, precise tools rather than exposing a vague general-purpose capability.</td><td>A read-only incident-log or shipment lookup tool with a clear purpose, validated inputs, bounded output, and a stable contract. The service must still enforce business permissions; exposing a tool through MCP does not make every call authorized.</td></tr><tr><td><code>mcp-tool-security</code></td><td>Classify tool risk, configure confirmation, implement denial hooks, and restrict network/file access.</td><td>Decide what can run autonomously and enforce boundaries around sensitive operations.</td><td>Least-privilege access to approved tools; restrict file paths and network destinations; require review for writes. Test enforcement rather than trusting descriptions or a deny-list alone.</td></tr><tr><td><code>cicd-integration</code></td><td>Extend GitHub Actions with non-interactive Copilot CLI diagnosis, PR quality summaries, and a hardened tool-use hook.</td><td>Add AI assistance to an existing pipeline without confusing generated advice with a required test gate.</td><td>CI that runs deterministic tests/security checks and attaches optional diagnostic summaries. Protect tokens and treat untrusted PR content as data, not instructions.</td></tr><tr><td><code>capstone</code></td><td>Combine shell-based auditing, scripted diagnosis, custom configuration, and guarded cloud-agent implementation in an authentication example.</td><td>Synthesize an end-to-end engineering workflow with evidence, constraints, and review.</td><td>The process blueprint for the new capstone: brief -&gt; bounded implementation -&gt; tests -&gt; review -&gt; recorded evidence. The course's authentication scenario is not a requirement to build authentication from scratch.</td></tr></tbody></table></div><p>Selected evidence: <a href="../AIC-1102/LabFiles/context-rich-problem-solving/lab/README.md">event-pipeline README</a>, <a href="../AIC-1102/LabFiles/feature-scaffolding/lab/README.md">notification scaffold README</a>, <a href="../AIC-1102/LabFiles/mcp-tool-design/lab/README.md">MCP design README</a>, <a href="../AIC-1102/LabFiles/mcp-tool-security/lab/README.md">MCP security README</a>, <a href="../AIC-1102/LabFiles/cicd-integration/lab/README.md">CI README</a>, and <a href="../AIC-1102/LabFiles/capstone/lab/README.md">capstone README</a>. The other per-lab READMEs were also inspected.</p><p>Concrete feature contracts checked during this review: the <a href="../AIC-1102/LabFiles/guided-multi-step-coding-task/lab/FEATURE_BRIEF.md">task API brief</a> and <a href="../AIC-1102/LabFiles/cloud-agent-workflow/lab/ISSUE_CORE.md">ticket-status core issue</a>. Their accepted status behavior differs from the forward-only lifecycle in AIC-2101; copy the engineering technique, not the sample application's business rules.</p><p><strong>Proof to retain:</strong> a reviewed issue/brief, a small implementation diff, tests that fail on an introduced defect, a documented review decision, and CI results. Generated code or an agent's claim that it ran tests is not the evidence itself. Copilot configuration guides development; enforcement belongs in permissions, tools, and required checks.</p><p><a id="spec-labs"></a></p><h2 id="aic-2101-spec-driven-development">5. AIC-2101: Spec-Driven Development</h2><p>Location: <code>C:\LabFiles\AIC-2101\LabFiles</code>. Six lab directories. Beanbotics is a teaching application; the transferable skill is controlling requirements and implementation across changes, not coffee ordering itself.</p><div class="table-scroll"><table><thead><tr><th>Lab folder</th><th>What is learned</th><th>Intent of the exercise</th><th>Real-world use</th></tr></thead><tbody><tr><td><code>using-uv</code></td><td>Create a Python environment, install dependencies, and run a small example.</td><td>Prepare a repeatable environment before using an AI-assisted workflow.</td><td>The same reproducible project setup used in development and CI. This overlaps the AIC-1102 setup exercise.</td></tr><tr><td><code>foundations-first-cycle</code></td><td>Initialize OpenSpec and project context; explore existing size support; propose, apply, verify, and archive a narrowly scoped size-selection change.</td><td>Experience a complete requirements-to-code cycle and stop the agent from inferring extra scope.</td><td>A first greenfield feature with explicit exclusions, or a bounded change to an existing UI/API. Store intent in artifacts that survive a new chat session.</td></tr><tr><td><code>exploring-proposing-specifying</code></td><td>Discover unreachable order states; resolve design choices; write/refine behavioral requirements and a validated status lifecycle.</td><td>Separate exploration, decisions, requirements, and technical design before implementation.</td><td>Specify an exception-review state machine and allowed transitions. Clarify roles, terminal states, cancellations, and invalid transitions instead of letting the model guess.</td></tr><tr><td><code>implementation-patterns-debugging</code></td><td>Implement dependent customization/confirmation/receipt changes and detect unspecified tax/rounding assumptions.</td><td>Debug requirement ambiguity as well as code defects; an apparently correct result may still rest on an invented rule.</td><td>Specify time zones, event ordering, eligibility rules, and calculation semantics before generating shipment-related behavior. Confirm numerical rules with authoritative domain owners.</td></tr><tr><td><code>expanded-workflow-spec-lifecycle</code></td><td>Use expanded new/continue/fast-forward/verify workflows; review proposal, specs, design, and tasks in stages; add ingredient-cost calculations and a dashboard.</td><td>Add review gates and traceability when a change spans data, services, APIs, and UI.</td><td>A cross-layer exception workflow with review checkpoints and acceptance evidence. Use incremental artifact review for consequential changes rather than blindly fast-forwarding.</td></tr><tr><td><code>real-world-patterns-spec-management</code></td><td>Distinguish cosmetic fixes from behavior changes; hand-write/review delta specs; identify pricing assumptions; implement dynamic pricing and update dependent specs.</td><td>Keep the specification of current behavior aligned with the code as requirements evolve.</td><td>Change escalation thresholds or policies without silently breaking downstream consumers. Track modified capabilities and archived decisions; avoid a full spec cycle for a trivial cosmetic-only correction.</td></tr></tbody></table></div><p>Evidence: solution walkthroughs for <a href="../AIC-2101/LabFiles/foundations-first-cycle/solutions/solution-walkthrough.md">foundations</a>, <a href="../AIC-2101/LabFiles/exploring-proposing-specifying/solutions/solution-walkthrough.md">exploration and specification</a>, <a href="../AIC-2101/LabFiles/implementation-patterns-debugging/solutions/solution-walkthrough.md">implementation and debugging</a>, <a href="../AIC-2101/LabFiles/expanded-workflow-spec-lifecycle/solutions/solution-walkthrough.md">expanded lifecycle</a>, and <a href="../AIC-2101/LabFiles/real-world-patterns-spec-management/solutions/solution-walkthrough.md">real-world spec management</a>.</p><p><strong>Practical takeaway:</strong> A specification states observable behavior; a design records implementation choices and rationale; tasks organize the work; tests and evaluations provide evidence. Archiving a change preserves history, but does not by itself prove that the deployed service matches the specification.</p><p><strong>Proof to retain:</strong> choose one requirement and trace it to an acceptance scenario, implementation task, code change, and actual verification result. Then show that the current spec reflects the behavior after archive. Clearing chat context tests whether the written artifacts preserve intent; it does not transfer unwritten assumptions automatically.</p><p><a id="fedex-ideas"></a></p><h2 id="fedex-greenfield-opportunities-to-validate">6. FedEx Greenfield Opportunities to Validate</h2><p>These are plausible logistics-domain opportunities, <strong>not claims about FedEx's actual shortcomings or ongoing projects</strong>. Validate the user, current process, duplication risk, and data access with an authorized stakeholder before selecting one.</p><div class="table-scroll"><table><thead><tr><th>Candidate</th><th>Problem hypothesis</th><th>New prototype</th><th>Main labs used</th><th>Discovery question</th></tr></thead><tbody><tr><td><strong>Shipment Exception Triage Assistant (best fit for combining the courses)</strong></td><td>Reviewing a shipment issue may require combining event history, a customer message, and an operating policy.</td><td>An analyst-facing tool that produces a factual timeline, structured issue category, evidence references, and a suggested next step for human review.</td><td>ADK tools/classifier/guardrails/evaluations; Copilot tests/MCP/security; OpenSpec lifecycle.</td><td>Which exception category currently takes the most manual review, and what facts can an analyst legally access?</td></tr><tr><td><strong>Shipment Document Intake Checker</strong></td><td>Incomplete or inconsistent paperwork may create avoidable review work.</td><td>Classify synthetic documents, check a stakeholder-approved field checklist, and flag missing or conflicting fields.</td><td>Structured outputs, document routing, deterministic validation, test generation, spec management.</td><td>Which document type and checklist have a clear owner and reliable examples?</td></tr><tr><td><strong>Approved Procedure Evidence Assistant</strong></td><td>Finding the applicable approved procedure may be difficult when policy versions or regions differ.</td><td>A read-only assistant that cites a curated procedure corpus, records its version, and escalates when no supported answer exists.</td><td>Research/report workflow, tools, guardrails, evaluations, deployment.</td><td>Can we obtain an approved, versioned corpus and define which questions are safe to answer?</td></tr><tr><td><strong>Engineering Incident Log Analyst</strong></td><td>Engineers may spend time correlating log evidence and producing initial incident summaries.</td><td>A read-only MCP-backed assistant over synthetic logs that proposes hypotheses and investigation steps without changing infrastructure.</td><td>Context-rich debugging, MCP design/security, CI diagnosis, ADK workflows.</td><td>Which log sources are approved, and which diagnostic tasks can be tested against known incidents?</td></tr></tbody></table></div><p>The document checker may be the better starting point if tracking data is unavailable. The log analyst is a separate engineering-facing option, not an assertion that shipment operations need a new system.</p><h3 id="select-the-project-using-available-evidence">Select the Project Using Available Evidence</h3><ul><li>Choose shipment triage if a reviewer can define one useful category and label realistic cases. Without this, demonstrate a fictional workflow rather than claim an operational solution.</li><li>Choose document intake if a concrete document/checklist is available. Start with supplied text or structured documents; scanned-document OCR/layout extraction is additional work not established by the classifier lab.</li><li>Choose procedure lookup only when documents are approved, versioned, and available. The research workflow does not by itself provide a production retrieval/indexing system or permission-aware knowledge base.</li><li>Choose log analysis when the audience is engineers and useful labeled incidents exist. Redacted or synthetic logs are preferable to unrestricted production access.</li><li>If no sponsor or approved data is available, select the most testable synthetic-data demonstration. Do not make integration access a hidden dependency or promise a business saving that cannot be measured.</li></ul><p><a id="capstone"></a></p><h2 id="recommended-capstone-shipment-exception-triage-assistant">7. Recommended Capstone: Shipment Exception Triage Assistant</h2><h3 id="problem-and-users">Problem and Users</h3><p><strong>Hypothesis:</strong> A support or operations analyst can review a defined shipment exception more consistently when shipment facts and the relevant procedure are assembled into one evidence-backed draft.</p><p><strong>Primary user:</strong> A human reviewer. <strong>Decision boundary:</strong> The assistant summarizes and recommends; the reviewer decides. It must not invent delivery commitments or autonomously change shipment instructions.</p><p>Start with one stakeholder-approved exception category, one operating-policy set, and one synthetic data format. Confirm that this is not duplicating an existing capability before expanding it.</p><h3 id="first-demonstration-before-a-full-mvp">First Demonstration Before a Full MVP</h3><p>Build one vertical slice: a synthetic case goes in; a validated, evidence-backed draft comes out; a person accepts, edits, or rejects it. A command-line or small local page is enough initially. A queue, cloud deployment, MCP server, A2A team, and response cache are not prerequisites.</p><p>Use this separation of responsibilities:</p><ol><li>Application code validates the case and retrieves the allowed snapshot and policy.</li><li>Deterministic code prepares the timeline and identifies missing/contradictory data without inventing facts.</li><li>One schema-output model step interprets the permitted text and drafts a supported explanation.</li><li>Application code validates fields and reference IDs; a reviewer checks whether the cited sources actually support the claims.</li><li>The application records the reviewed result and the input/model/policy versions used.</li></ol><p>This avoids assuming simultaneous tool use and schema output. Later, introduce a tool-selecting agent only if the retrieval sequence genuinely needs dynamic decisions and the backend supports the intended contract.</p><h3 id="a-concrete-synthetic-case">A Concrete Synthetic Case</h3><p>This is invented demonstration data, not a real shipment, tracking-number format, FedEx procedure, or delivery-service rule.</p><div class="table-scroll"><table><thead><tr><th>Item</th><th>Demonstration value</th></tr></thead><tbody><tr><td>Case</td><td><code>SIM-1001</code>; customer text: &quot;Has this shipment been delivered?&quot;</td></tr><tr><td>Snapshot</td><td>Retrieved at <code>2026-10-14T12:00:00Z</code>; contains event <code>E-101</code> (received at origin) and <code>E-102</code> (in transit), each with its own event timestamp. No delivery event is supplied.</td></tr><tr><td>Fictional policy</td><td><code>P-DEMO-01</code>: state only what the supplied evidence supports; request a refreshed authoritative snapshot when delivery cannot be confirmed.</td></tr><tr><td>Expected classification</td><td><code>insufficient_delivery_evidence</code>, under the prototype's explicitly defined categories. It is not automatically a delay or lost-shipment classification.</td></tr><tr><td>Supported draft</td><td>&quot;The supplied snapshot's latest event is in transit. Delivery cannot be confirmed from this snapshot.&quot; Cite <code>E-102</code> and the snapshot retrieval time.</td></tr><tr><td>Reviewable next step</td><td>Request or review a refreshed authoritative tracking snapshot, following <code>P-DEMO-01</code>; make no operational change.</td></tr><tr><td>Must not claim</td><td>&quot;It has not been delivered,&quot; &quot;it is late/lost,&quot; or an arrival time. Absence of an event in a supplied snapshot does not establish the shipment's actual current status.</td></tr></tbody></table></div><p>The paired test adds a later delivery event to a new snapshot and checks that the draft changes appropriately. A second test keeps the same customer wording but uses a different case: facts must not be copied across cases. These tests make freshness and evidence boundaries observable.</p><h3 id="mvp-scope">MVP Scope</h3><ul><li>Input: a synthetic shipment identifier, timestamped scan/event history, an optional customer message, and a small approved or explicitly fictional policy set.</li><li>Tools: read-only shipment lookup and policy lookup through mock adapters. Return typed data, source identifiers, timestamps, and explicit error states.</li><li>Processing: deterministic code validates identifiers and prepares events under specified timestamp/time-zone rules; a schema-output step classifies/summarizes only the supplied facts. Missing, stale, or contradictory evidence produces an unknown/review-required result. Preserve event time and snapshot retrieval time as different fields.</li><li>Output: a structured issue category, factual timeline, supporting event/policy references, a draft next action, uncertainty reasons, and a human-review flag. A schema-valid answer still requires factual checks.</li><li>Workflow: validate/authorize input -&gt; retrieve facts -&gt; classify and draft -&gt; validate output/references -&gt; human review of evidence and recommendation -&gt; record the review outcome. A valid reference ID alone does not prove a supported claim.</li><li>UI after the first slice: a compact review queue and case detail view showing facts, references, and the draft. The user can accept, edit, or reject the recommendation; save decisions only within the prototype. Track reviewer identity, outcome, corrections, and the original draft; do not silently overwrite the audit trail.</li><li>Out of scope: automatic rerouting, automatic refunds, operational shipment updates, real customer messaging, customs/legal determinations, and predicted delivery dates without an authoritative source.</li></ul><h3 id="how-the-three-courses-are-used">How the Three Courses Are Used</h3><div class="table-scroll"><table><thead><tr><th>Project activity</th><th>Skills applied</th><th>Evidence to keep</th></tr></thead><tbody><tr><td>Define the problem and boundaries.</td><td>OpenSpec exploration, proposal, scenarios, explicit exclusions.</td><td>Stakeholder questions, an approved brief, assumptions, and acceptance criteria.</td></tr><tr><td>Specify case/review behavior.</td><td>OpenSpec state lifecycle and dependent change management.</td><td>Required fields, allowed review transitions, failure scenarios, and versioned policy rules.</td></tr><tr><td>Build a minimal service and UI.</td><td>Copilot scaffolding, multi-step implementation, custom configuration, review.</td><td>Small reviewed changes, architecture decisions, and setup instructions.</td></tr><tr><td>Implement the runtime assistant.</td><td>ADK agent, schemas, tools, state, callbacks, and plugins.</td><td>Tool contracts, invocation traces, guardrail outcomes, and model/prompt versions.</td></tr><tr><td>Prove reliability and isolation.</td><td>Mocked ADK tests; Copilot-generated tests reviewed by a human; evaluations and MCP security.</td><td>Regression tests, held-out evaluation results, authorization tests, and adversarial cases.</td></tr><tr><td>Prepare a pilot.</td><td>CI, deployment, tracing, usage/cost monitoring, and specification verification.</td><td>Passing pipeline, rollback plan, access review, and a reproducible demo.</td></tr></tbody></table></div><h3 id="milestones">Milestones</h3><ol><li><strong>Discover and specify:</strong> Confirm the target reviewer, exception category, data boundaries, and success criteria. Write proposal, scenarios, design, and tasks. No operational integration yet.</li><li><strong>Build the deterministic baseline:</strong> Create synthetic fixtures, read-only adapters, event validation, and a simple fact/template view. Establish what works without an LLM; use it as the comparison, not just a preparatory step.</li><li><strong>Add one validated ADK model step:</strong> Add structured classification and evidence-backed draft summaries. Check backend/schema compatibility and add logging, fallback, and input/output controls. Do not add dynamic tool selection, multi-agent/A2A, or caching by default.</li><li><strong>Verify:</strong> Test error paths, isolation, prompt injection, unsupported claims, and plugin combinations. Run a held-out evaluation set and compare the assistant with the deterministic baseline.</li><li><strong>Demonstrate and hand over:</strong> Deliver a local demo, test/evaluation report, trace/cost examples, limitations, and updated specs. A cloud pilot is optional and requires approval, access, and budget.</li></ol><h3 id="suggested-acceptance-gates">Suggested Acceptance Gates</h3><p>These are proposed capstone gates, not measured results or guaranteed production outcomes. Agree the exact thresholds with the sponsor.</p><div class="table-scroll"><table><thead><tr><th>Area</th><th>Proposed verification</th></tr></thead><tbody><tr><td>Deterministic correctness</td><td>All agreed tests pass for identifiers, event ordering, missing data, service failures, and review transitions.</td></tr><tr><td>Structured output</td><td>Every evaluated final output either conforms to the schema or produces a controlled fallback; no unhandled parse failures. Report fallback/abstention rate separately so a system that refuses every case cannot appear useful.</td></tr><tr><td>Factual grounding</td><td>On the held-out set, each asserted shipment fact has a valid reference whose content actually supports the assertion, checked against labeled facts or by a reviewer. Unsupported ETAs, fabricated events, and unsupported &quot;not delivered&quot; claims fail the gate.</td></tr><tr><td>Safety and isolation</td><td>All defined authorization, cross-user/cache-isolation, and prohibited-write test cases pass. This is evidence for those cases, not proof against every possible attack.</td></tr><tr><td>Useful triage</td><td>A domain reviewer labels category and next-step usefulness on held-out cases. Report errors per category, unknown handling, and coverage, not just one overall accuracy score. Choose a target after establishing the baseline and class balance.</td></tr><tr><td>Operational value</td><td>Compare review time and correction rate with the deterministic/template baseline on the same cases; counterbalance case order to reduce practice effects. A claim about FedEx's actual workflow requires a separate authorized study against that workflow. Do not promise a percentage before measurement.</td></tr><tr><td>Cost and observability</td><td>Record model/tool calls, latency, token use or available cost estimates, fallback count, and intervention count, without leaking sensitive data.</td></tr></tbody></table></div><p>Size the synthetic fixture set to cover the agreed scenarios rather than targeting an arbitrary number. Include normal cases, unknown identifiers, incomplete/out-of-order scans, conflicting timestamps, tool failures, missing policies, injection attempts, and repeated queries after facts change. Split development and held-out cases by underlying shipment/scenario family, not just by paraphrasing the same example. Freeze the held-out set before tuning; do not count it as held-out after using its failures to tune the system.</p><p>Run repeated model evaluations with recorded settings to expose variability. Use domain labels as the main reference; LLM-as-judge scores are supporting signals, not the sole release authority. Synthetic results demonstrate the prototype, not real-world FedEx effectiveness or a statistically established safety rate.</p><h3 id="definition-of-done-for-the-local-capstone">Definition of Done for the Local Capstone</h3><ul><li>A fresh checkout can run with documented dependencies and synthetic fixtures, without requiring operational credentials. Live model access, if used, must be approved; deterministic tests work without it.</li><li>The demonstration includes one normal case, one uncertain case, one tool/service failure, one adversarial-input case, and one changed-snapshot case.</li><li>Each accepted requirement links to verification evidence. Keep mock-test results separate from live-model evaluation results and identify any checks that were not run.</li><li>The handover includes the brief, specs/design/tasks, reviewed implementation, setup/demo instructions, evaluation dataset/version, results, limitations, and sample redacted traces.</li><li>The deterministic baseline comparison shows where the model helps and where it does not. If there is no demonstrated improvement, retain the simpler baseline rather than forcing an agent into the solution.</li></ul><h3 id="security-and-production-boundaries">Security and Production Boundaries</h3><ul><li>Start with synthetic or explicitly approved de-identified data. Do not upload operational/customer data, internal policies, or credentials to an unapproved model service.</li><li>Enforce identity and permissions in the service/tool layer. A prompt, Copilot instruction, or MCP description is not an access-control boundary.</li><li>Avoid caching mutable shipment answers in the MVP. If caching is later added, use scoped keys, versioning, freshness rules, and cache-hit safety tests; do not copy the lab's latest-text-only cache into production.</li><li>Keep operational writes outside the prototype. Any future write capability needs authorization, human approval where appropriate, idempotency, auditability, and rollback/recovery design.</li><li>Treat tool results and documents as untrusted content. Require provenance; test malicious embedded instructions and failures explicitly.</li><li>Store secrets outside source control and reports. Use approved secret management for a hosted pilot; never put keys into logs or prompts.</li></ul><h3 id="important-gaps-beyond-these-labs">Important Gaps Beyond These Labs</h3><p>The labs introduce patterns; they do not establish a complete enterprise delivery capability. A real pilot may additionally need identity/tenant isolation, persistence and migrations, retention and deletion rules, approved integration contracts, policy ownership/versioning, OCR or retrieval infrastructure, load/concurrency testing, threat modeling, operational monitoring, and support ownership. Treat these as separately scoped engineering work, not capabilities automatically acquired by completing a lab.</p><p>For a future brownfield capstone, add a characterization-test baseline, existing API/data contracts, and a rollout/rollback or migration plan before changing behavior. Do not infer an existing project's rules from the sample ticket, order, or coffee application.</p><h2 id="a-reusable-planning-checklist">8. A Reusable Planning Checklist</h2><p>For either a future greenfield or brownfield project, record the following before implementation:</p><ol><li>The user, task, problem hypothesis, and current baseline.</li><li>Inputs, outputs, data classification, authoritative sources, and tool permissions.</li><li>Scope and exclusions; existing code/integration constraints for brownfield work.</li><li>Behavioral scenarios, unknown/failure states, and human decision boundaries.</li><li>The smallest architecture that meets the need; where deterministic code is better than an agent.</li><li>Mock tests, security tests, model evaluations, and reviewer acceptance criteria.</li><li>Deployment assumptions, logs/traces, costs, ownership, and rollback expectations.</li><li>A demonstration and evidence package, with specs aligned to implemented behavior.</li></ol><p><strong>Recommendation:</strong> Use AIC-2101 to define the contract, AIC-1102 to build and verify the software, and WA3915 to add a controlled agent only where it improves the task. For the FedEx option, first validate the shipment-exception hypothesis with a stakeholder, then build a synthetic-data, human-reviewed greenfield prototype.</p><h2 id="evidence-and-limitations">9. Evidence and Limitations</h2><ul><li>Inventory: 9 ADK labs, 14 Copilot engineering labs, and 6 OpenSpec/setup labs, totaling 29 directories. <code>using-uv</code> occurs in both AIC courses.</li><li>Source review: the WA3915 HTML guides, including their tool/schema compatibility caveat; introductory READMEs across AIC-1102, its task API brief and ticket-status core issue; and the five AIC-2101 solution walkthroughs. Walkthroughs show expected exercise progression, not a verified completion record for your working copies.</li><li>The report does not audit every implementation or claim that tests in all labs pass. No business system integration or live-model evaluation was performed for this report.</li><li>FedEx ideas are hypotheses proposed from the learned patterns. Current internal processes, ongoing projects, policies, data access, and actual business benefits are unknown.</li><li>The linked source material is local. Links resolve relative to <code>C:\LabFiles\FDE</code>; move the report without the sibling course folders and those source links will need updating.</li></ul>  </main>  <footer><p>Local lab study, 14 October 2026. FedEx opportunities are unvalidated greenfield proposals. No operational integrations or business-impact claims.</p></footer></body></html>

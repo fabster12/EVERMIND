@@ -1,0 +1,37 @@
+# Secrets - never commit. .env.example carries names only.
+.env
+.env.*
+!.env.example
+
+# Generated Word documents. The .pdf and .md are committed because they are
+# what people read; the .docx is a build artifact of tools/build_*.py and
+# regenerates identically. Keeping all three invites someone to read a stale
+# one.
+*.docx
+~$*
+
+# Vendor course material - 36 MB of HTML we did not write and may not
+# redistribute. Kept locally in notes/reference/ for grepping while we work.
+notes/reference/
+
+# Pipeline output. Regenerated on every run.
+src/out/
+
+# Share packages. The zips rebuild in seconds (dist/update-zips.cmd), and a
+# stale zip in git is worse than no zip. The folder itself is committed -
+# it holds the rebuild script and the readmes that go inside the zips.
+dist/*.zip
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
