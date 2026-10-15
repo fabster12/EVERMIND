@@ -56,8 +56,13 @@ uv run pytest src/tests
 
 ### If `pyproject.toml` does NOT exist yet — first time only
 
+> Already done, on 15 October. `pyproject.toml`, `uv.lock` and
+> `.python-version` are committed, so **you want `uv sync` above**, not
+> this. Kept as a record of how the project was created.
+
 **One person does this once, commits the result, and nobody repeats it.**
-`uv sync` has nothing to read until it exists.
+`uv sync` has nothing to read until it exists. Run it **at the repo root**,
+not inside `src/` — the project has to contain `tools/` and `app/` too.
 
 ```
 uv init --python 3.12

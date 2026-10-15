@@ -1,0 +1,31 @@
+[project]
+name = "evermind"
+version = "0.1.0"
+description = "Turns unanswered support questions into drafted, source-backed knowledge base answers for human approval."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    # Pinned, with the reasoning, in scratch/0002-pin-google-adk-2-1.md.
+    # Short version: on 2.0.0 the Dev UI Traces tab shows zero spans, and
+    # 2.x is what lets one LlmAgent carry tools and an output_schema.
+    "google-adk>=2.1.0,<3",
+    "pydantic>=2.14.1",
+    "python-dotenv>=1.0.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
+
+# The agent package lives at src/evermind, so `import evermind` resolves
+# without anything on PYTHONPATH - from tests, from tools, and from the
+# app once it exists.
+[tool.hatch.build.targets.wheel]
+packages = ["src/evermind"]
+
+[tool.pytest.ini_options]
+# src/tests is deterministic and needs no key. src/evals calls the live
+# model and is run separately, so it is not collected by a bare `pytest`.
+testpaths = ["src/tests"]
+pythonpath = ["src"]
