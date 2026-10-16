@@ -1,0 +1,1 @@
+This is EverMind. It reads the log of questions your knowledge base couldn't answer, and does the first pass on every one of them — so a person sitting down to review ends up looking at a short list of decisions, not a long list of raw, unsorted questions.

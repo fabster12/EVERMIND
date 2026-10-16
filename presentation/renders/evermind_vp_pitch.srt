@@ -1,0 +1,483 @@
+1
+00:00:00,400 --> 00:00:03,130
+Every support team has a knowledge base.
+
+2
+00:00:03,130 --> 00:00:08,590
+And every knowledge base has the same quiet
+problem: it only knows what somebody
+
+3
+00:00:08,590 --> 00:00:10,091
+thought to write down.
+
+4
+00:00:10,091 --> 00:00:11,934
+Whatever it was never told,
+
+5
+00:00:11,934 --> 00:00:16,848
+it simply can't answer — no matter how many
+times the question comes in.
+
+6
+00:00:18,148 --> 00:00:20,563
+Here's what actually happens today.
+
+7
+00:00:20,563 --> 00:00:25,117
+Someone answers the question by hand, from
+memory, under deadline.
+
+8
+00:00:25,117 --> 00:00:28,705
+It's never written down anywhere the system
+can use.
+
+9
+00:00:28,705 --> 00:00:29,905
+So next week,
+
+10
+00:00:29,905 --> 00:00:35,426
+a different customer asks the exact same
+thing — and somebody answers it by hand
+
+11
+00:00:35,426 --> 00:00:36,626
+again.
+
+12
+00:00:36,626 --> 00:00:38,509
+Twenty minutes, every repeat, forever.
+
+13
+00:00:39,459 --> 00:00:40,659
+This is EverMind.
+
+14
+00:00:40,659 --> 00:00:45,240
+It reads the log of questions your knowledge
+base couldn't answer,
+
+15
+00:00:45,240 --> 00:00:50,863
+and does the first pass on every one of them
+— so a person sitting down to review
+
+16
+00:00:50,863 --> 00:00:53,987
+ends up looking at a short list of
+decisions,
+
+17
+00:00:53,987 --> 00:00:56,972
+not a long list of raw, unsorted questions.
+
+18
+00:00:58,252 --> 00:01:00,774
+Here's the whole idea in one picture.
+
+19
+00:01:00,774 --> 00:01:02,887
+Questions come in from the log.
+
+20
+00:01:02,887 --> 00:01:05,204
+Similar ones get grouped together,
+
+21
+00:01:05,204 --> 00:01:10,725
+so five people asking the same thing in five
+different ways becomes one decision,
+
+22
+00:01:10,725 --> 00:01:11,925
+not five.
+
+23
+00:01:11,925 --> 00:01:15,401
+Every group gets sorted into one of three
+outcomes.
+
+24
+00:01:15,401 --> 00:01:18,809
+A genuine gap gets drafted with a source
+attached.
+
+25
+00:01:18,809 --> 00:01:23,648
+And the only way anything crosses into your
+knowledge base is a person,
+
+26
+00:01:23,648 --> 00:01:25,183
+on the right, signing off.
+
+27
+00:01:26,133 --> 00:01:29,202
+This question had never been answered
+before.
+
+28
+00:01:29,202 --> 00:01:33,021
+EverMind found it, checked the trusted source
+documents,
+
+29
+00:01:33,021 --> 00:01:37,795
+and drafted an answer — with the exact
+document it came from attached,
+
+30
+00:01:37,795 --> 00:01:43,115
+so a reviewer can verify it in seconds
+instead of researching it from scratch.
+
+31
+00:01:44,415 --> 00:01:46,083
+This one only looks new.
+
+32
+00:01:46,083 --> 00:01:51,923
+It's the same question your knowledge base
+already answers, just worded differently.
+
+33
+00:01:51,923 --> 00:01:56,580
+EverMind recognizes the match and stops there
+— no wasted drafting,
+
+34
+00:01:56,580 --> 00:02:02,003
+and no duplicate entry cluttering the
+knowledge base for your team to clean up
+
+35
+00:02:02,003 --> 00:02:02,770
+later.
+
+36
+00:02:03,720 --> 00:02:07,688
+And some questions simply aren't support
+questions at all.
+
+37
+00:02:07,688 --> 00:02:10,903
+This one's about a job opening, not a
+shipment.
+
+38
+00:02:10,903 --> 00:02:12,887
+EverMind recognizes that too,
+
+39
+00:02:12,887 --> 00:02:18,497
+and declines before it ever gets near
+drafting — it knows the difference between a
+
+40
+00:02:18,497 --> 00:02:23,560
+gap in the knowledge base and a question that
+was never its job to answer.
+
+41
+00:02:24,860 --> 00:02:26,936
+Before writing a line of code,
+
+42
+00:02:26,936 --> 00:02:31,987
+we wrote down exactly what this system must
+do — and just as importantly,
+
+43
+00:02:31,987 --> 00:02:37,245
+what it must never do — and had that reviewed
+before the build even started.
+
+44
+00:02:37,245 --> 00:02:42,988
+Same discipline any engineering organization
+uses before committing real resources:
+
+45
+00:02:42,988 --> 00:02:45,341
+agree the requirements in writing,
+
+46
+00:02:45,341 --> 00:02:48,455
+then build to them, not the other way
+around.
+
+47
+00:02:49,755 --> 00:02:52,361
+Before we'd trust this on anything real,
+
+48
+00:02:52,361 --> 00:02:57,182
+we tested it against questions where we
+already know the correct outcome —
+
+49
+00:02:57,182 --> 00:02:58,420
+fifty-nine of them,
+
+50
+00:02:58,420 --> 00:03:02,720
+covering genuine gaps, duplicates, and
+questions it should refuse.
+
+51
+00:03:02,720 --> 00:03:08,127
+That turns the question from ‘does this look
+reasonable’ into ‘did it get the right
+
+52
+00:03:08,127 --> 00:03:10,473
+answer,’ which is a much higher bar,
+
+53
+00:03:10,473 --> 00:03:12,688
+and the one that actually matters.
+
+54
+00:03:13,988 --> 00:03:18,003
+Here's what that discipline looks like in the
+actual code.
+
+55
+00:03:18,003 --> 00:03:23,196
+Every answer the system drafts has to carry
+its source, a confidence score,
+
+56
+00:03:23,196 --> 00:03:27,350
+and a stated reason — or the object simply
+can't be created.
+
+57
+00:03:27,350 --> 00:03:30,465
+This isn't a guideline we hope gets
+followed.
+
+58
+00:03:30,465 --> 00:03:35,727
+It's enforced in the data structure itself,
+before a draft can exist at all.
+
+59
+00:03:37,027 --> 00:03:40,478
+And this is what comes out the other side
+after a run.
+
+60
+00:03:40,478 --> 00:03:45,271
+One reviewable decision per gap, the source
+right there next to the answer,
+
+61
+00:03:45,271 --> 00:03:50,511
+ready for a person to check in under a minute
+— instead of researching and writing
+
+62
+00:03:50,511 --> 00:03:51,711
+it from nothing.
+
+63
+00:03:52,833 --> 00:03:55,166
+Here's the part that matters most,
+
+64
+00:03:55,166 --> 00:04:00,793
+and the part worth remembering above
+everything else in this video: EverMind never
+
+65
+00:04:00,793 --> 00:04:02,097
+publishes anything.
+
+66
+00:04:02,097 --> 00:04:03,297
+Not once.
+
+67
+00:04:03,297 --> 00:04:08,787
+Not automatically, and not under any
+configuration or setting you could turn on.
+
+68
+00:04:08,787 --> 00:04:12,191
+There is no version of this where it skips
+the human.
+
+69
+00:04:13,141 --> 00:04:17,314
+And it isn't a policy we're asking you to
+trust on good faith.
+
+70
+00:04:17,314 --> 00:04:20,544
+There's no path in the code that lets it
+happen.
+
+71
+00:04:20,544 --> 00:04:26,063
+The only thing the system is capable of
+writing is one list, for a person to read.
+
+72
+00:04:26,063 --> 00:04:31,379
+Reaching your actual knowledge base from
+there requires a separate, deliberate,
+
+73
+00:04:31,379 --> 00:04:33,600
+human action — every single time.
+
+74
+00:04:34,900 --> 00:04:36,351
+One more trust point,
+
+75
+00:04:36,351 --> 00:04:41,740
+because this question always comes up: what
+if someone tries to manipulate it?
+
+76
+00:04:41,740 --> 00:04:47,474
+Every logged question is treated strictly as
+text to read — never as an instruction
+
+77
+00:04:47,474 --> 00:04:48,787
+the system follows.
+
+78
+00:04:48,787 --> 00:04:51,965
+If someone embeds a command inside a
+question,
+
+79
+00:04:51,965 --> 00:04:56,318
+the worst case is a rejected draft a human
+discards in seconds.
+
+80
+00:04:56,318 --> 00:05:00,671
+There's no path from a clever question to an
+unreviewed action.
+
+81
+00:05:01,971 --> 00:05:05,086
+So here's how it actually reaches a
+customer.
+
+82
+00:05:05,086 --> 00:05:10,071
+A person reads the drafted decision, checks
+the cited source themselves,
+
+83
+00:05:10,071 --> 00:05:12,424
+and decides whether to approve it.
+
+84
+00:05:12,424 --> 00:05:17,893
+That's the only way anything this system
+finds ever reaches the knowledge base,
+
+85
+00:05:17,893 --> 00:05:19,763
+and from there, a customer.
+
+86
+00:05:21,063 --> 00:05:23,1000
+Fifty-nine questions, one team, one month.
+
+87
+00:05:23,1000 --> 00:05:27,845
+That's not a one-time cleanup — it repeats
+every month,
+
+88
+00:05:27,845 --> 00:05:32,391
+and it repeats on every team you have that
+runs a knowledge base.
+
+89
+00:05:32,391 --> 00:05:37,216
+The twenty-minute tax from the start of this
+video isn't an incident.
+
+90
+00:05:37,216 --> 00:05:39,943
+It's the ongoing cost of doing nothing.
+
+91
+00:05:41,243 --> 00:05:43,931
+And we want to be upfront about its limit,
+
+92
+00:05:43,931 --> 00:05:49,115
+because every tool that sounds this capable
+eventually gets asked to do more than
+
+93
+00:05:49,115 --> 00:05:50,315
+it should.
+
+94
+00:05:50,315 --> 00:05:54,923
+When EverMind can't find a real source to
+support an answer, it says so.
+
+95
+00:05:54,923 --> 00:05:59,467
+It doesn't guess, and it doesn't fill the gap
+with something plausible.
+
+96
+00:05:59,467 --> 00:06:04,715
+An answer with no evidence behind it isn't
+treated as a weak answer — it's treated
+
+97
+00:06:04,715 --> 00:06:05,915
+as an invalid one,
+
+98
+00:06:05,915 --> 00:06:08,153
+and it never reaches a reviewer at all.
+
+99
+00:06:09,103 --> 00:06:13,124
+This is a working project, built from real
+support questions,
+
+100
+00:06:13,124 --> 00:06:18,200
+with every decision it makes already defined
+and already tested against known
+
+101
+00:06:18,200 --> 00:06:20,507
+answers — not a concept on a slide.
+
+102
+00:06:20,507 --> 00:06:24,265
+We're not asking you to change how your team
+works today.
+
+103
+00:06:24,265 --> 00:06:29,011
+We're asking for the chance to run this
+against one real knowledge base,
+
+104
+00:06:29,011 --> 00:06:31,451
+and show you the twenty minutes back.
+
+105
+00:06:31,451 --> 00:06:32,651
+That's EverMind.

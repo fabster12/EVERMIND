@@ -1,0 +1,1 @@
+Here's what that discipline looks like in the actual code. Every answer the system drafts has to carry its source, a confidence score, and a stated reason — or the object simply can't be created. This isn't a guideline we hope gets followed. It's enforced in the data structure itself, before a draft can exist at all.

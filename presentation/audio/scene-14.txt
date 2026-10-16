@@ -1,0 +1,1 @@
+One more trust point, because this question always comes up: what if someone tries to manipulate it? Every logged question is treated strictly as text to read — never as an instruction the system follows. If someone embeds a command inside a question, the worst case is a rejected draft a human discards in seconds. There's no path from a clever question to an unreviewed action.

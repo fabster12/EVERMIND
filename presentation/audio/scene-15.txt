@@ -1,0 +1,1 @@
+So here's how it actually reaches a customer. A person reads the drafted decision, checks the cited source themselves, and decides whether to approve it. That's the only way anything this system finds ever reaches the knowledge base, and from there, a customer.

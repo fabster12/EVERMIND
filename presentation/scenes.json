@@ -1,0 +1,220 @@
+[
+  {
+    "id": "s01-open",
+    "part": 1,
+    "kind": "title",
+    "mascotPose": "neutral",
+    "heading": "EverMind",
+    "sub": "Every knowledge base only knows what somebody thought to write down.",
+    "narration": "Every support team has a knowledge base. And every knowledge base has the same quiet problem: it only knows what somebody thought to write down. Whatever it was never told, it simply can't answer — no matter how many times the question comes in."
+  },
+  {
+    "id": "s02-cost",
+    "part": 1,
+    "kind": "statement",
+    "mascotPose": "concerned",
+    "heading": "The Cost of Forgetting",
+    "lines": [
+      "Someone answers it by hand.",
+      "It's never written down.",
+      "Next week, somebody asks it again."
+    ],
+    "narration": "Here's what actually happens today. Someone answers the question by hand, from memory, under deadline. It's never written down anywhere the system can use. So next week, a different customer asks the exact same thing — and somebody answers it by hand again. Twenty minutes, every repeat, forever."
+  },
+  {
+    "id": "s03-intro",
+    "part": 2,
+    "kind": "statement",
+    "mascotPose": "revealing",
+    "heading": "This Is EverMind",
+    "lines": [
+      "Reads what the knowledge base missed.",
+      "Does the first pass.",
+      "A person reviews a decision — not a pile of raw questions."
+    ],
+    "narration": "This is EverMind. It reads the log of questions your knowledge base couldn't answer, and does the first pass on every one of them — so a person sitting down to review ends up looking at a short list of decisions, not a long list of raw, unsorted questions."
+  },
+  {
+    "id": "s04-diagram",
+    "part": 2,
+    "kind": "diagram",
+    "mascotPose": "pointing",
+    "heading": "The Whole Idea, In One Picture",
+    "flow": [
+      { "label": "Questions log", "sub": "59 unanswered questions" },
+      { "label": "Group similar", "sub": "same question, asked differently" },
+      { "label": "Three-way check", "sub": "new · already answered · not ours" },
+      { "label": "Draft, with source", "sub": "cites a real document, or declines" },
+      { "label": "Human approves", "sub": "the only way anything moves forward", "gate": true },
+      { "label": "Knowledge base", "sub": "unchanged until a person says so" }
+    ],
+    "narration": "Here's the whole idea in one picture. Questions come in from the log. Similar ones get grouped together, so five people asking the same thing in five different ways becomes one decision, not five. Every group gets sorted into one of three outcomes. A genuine gap gets drafted with a source attached. And the only way anything crosses into your knowledge base is a person, on the right, signing off."
+  },
+  {
+    "id": "s05-example-review",
+    "part": 2,
+    "kind": "boxes",
+    "mascotPose": "thinking",
+    "heading": "Outcome One: A Genuine Gap",
+    "boxes": [
+      { "title": "“If I ship DDP, who gets the duty bill?”", "sub": "a real question from the log" },
+      { "title": "“The shipper is billed for duty, tax and handling.”", "sub": "drafted, citing the duty and tax guide" }
+    ],
+    "narration": "This question had never been answered before. EverMind found it, checked the trusted source documents, and drafted an answer — with the exact document it came from attached, so a reviewer can verify it in seconds instead of researching it from scratch."
+  },
+  {
+    "id": "s06-example-duplicate",
+    "part": 2,
+    "kind": "boxes",
+    "mascotPose": "neutral",
+    "heading": "Outcome Two: Already Answered",
+    "boxes": [
+      { "title": "“International shipping — how long?”", "sub": "a different phrasing of an existing entry" },
+      { "title": "Matched to an existing answer", "sub": "no draft written — nothing new needed" }
+    ],
+    "narration": "This one only looks new. It's the same question your knowledge base already answers, just worded differently. EverMind recognizes the match and stops there — no wasted drafting, and no duplicate entry cluttering the knowledge base for your team to clean up later."
+  },
+  {
+    "id": "s07-example-reject",
+    "part": 2,
+    "kind": "boxes",
+    "mascotPose": "concerned",
+    "heading": "Outcome Three: Not Ours to Answer",
+    "boxes": [
+      { "title": "“Any jobs going at the Amsterdam depot?”", "sub": "a real question from the log" },
+      { "title": "Declined — unrelated to the knowledge base", "sub": "never reaches drafting at all" }
+    ],
+    "narration": "And some questions simply aren't support questions at all. This one's about a job opening, not a shipment. EverMind recognizes that too, and declines before it ever gets near drafting — it knows the difference between a gap in the knowledge base and a question that was never its job to answer."
+  },
+  {
+    "id": "s08-process",
+    "part": 3,
+    "kind": "steps",
+    "mascotPose": "opening",
+    "heading": "Before We Wrote Any Code",
+    "items": [
+      "What problem",
+      "What it must do",
+      "How we'll build it",
+      "What order"
+    ],
+    "narration": "Before writing a line of code, we wrote down exactly what this system must do — and just as importantly, what it must never do — and had that reviewed before the build even started. Same discipline any engineering organization uses before committing real resources: agree the requirements in writing, then build to them, not the other way around."
+  },
+  {
+    "id": "s09-tested",
+    "part": 3,
+    "kind": "statement",
+    "mascotPose": "thinking",
+    "heading": "Checked Against Known Answers",
+    "lines": [
+      "Real questions, with the right answer already known.",
+      "Every outcome checked — gaps, duplicates, and the ones to decline.",
+      "Not “does this look reasonable,” but “did it get the right answer.”"
+    ],
+    "narration": "Before we'd trust this on anything real, we tested it against questions where we already know the correct outcome — fifty-nine of them, covering genuine gaps, duplicates, and questions it should refuse. That turns the question from ‘does this look reasonable’ into ‘did it get the right answer,’ which is a much higher bar, and the one that actually matters."
+  },
+  {
+    "id": "s10-code",
+    "part": 3,
+    "kind": "shots",
+    "mascotPose": "pointing",
+    "heading": "What a Reviewed Decision Looks Like in Code",
+    "sub": "Every answer carries its source, its confidence, and a reason — or it doesn't get created at all.",
+    "shots": ["vscode_schemas"],
+    "narration": "Here's what that discipline looks like in the actual code. Every answer the system drafts has to carry its source, a confidence score, and a stated reason — or the object simply can't be created. This isn't a guideline we hope gets followed. It's enforced in the data structure itself, before a draft can exist at all."
+  },
+  {
+    "id": "s11-output",
+    "part": 3,
+    "kind": "shots",
+    "mascotPose": "revealing",
+    "heading": "What Comes Out the Other Side",
+    "sub": "One reviewable decision per gap, ready to check in under a minute.",
+    "shots": ["terminal_output"],
+    "narration": "And this is what comes out the other side after a run. One reviewable decision per gap, the source right there next to the answer, ready for a person to check in under a minute — instead of researching and writing it from nothing."
+  },
+  {
+    "id": "s12-claim",
+    "part": 4,
+    "kind": "statement",
+    "mascotPose": "neutral",
+    "heading": "The Part That Matters Most",
+    "lines": [
+      "It never publishes anything.",
+      "Not once.",
+      "Not automatically. Not under any setting."
+    ],
+    "narration": "Here's the part that matters most, and the part worth remembering above everything else in this video: EverMind never publishes anything. Not once. Not automatically, and not under any configuration or setting you could turn on. There is no version of this where it skips the human."
+  },
+  {
+    "id": "s13-mechanism",
+    "part": 4,
+    "kind": "boxes",
+    "mascotPose": "neutral",
+    "heading": "There's No Path That Lets It",
+    "boxes": [
+      { "title": "EverMind writes", "sub": "one file — the draft queue. Nothing else." },
+      { "title": "A person writes", "sub": "the knowledge base. The only writer there is." }
+    ],
+    "narration": "And it isn't a policy we're asking you to trust on good faith. There's no path in the code that lets it happen. The only thing the system is capable of writing is one list, for a person to read. Reaching your actual knowledge base from there requires a separate, deliberate, human action — every single time."
+  },
+  {
+    "id": "s14-injection",
+    "part": 4,
+    "kind": "statement",
+    "mascotPose": "thinking",
+    "heading": "It Treats Every Question as Data",
+    "lines": [
+      "A question is text to read.",
+      "Never an instruction to follow.",
+      "Even if someone tries to make it one."
+    ],
+    "narration": "One more trust point, because this question always comes up: what if someone tries to manipulate it? Every logged question is treated strictly as text to read — never as an instruction the system follows. If someone embeds a command inside a question, the worst case is a rejected draft a human discards in seconds. There's no path from a clever question to an unreviewed action."
+  },
+  {
+    "id": "s15-approval",
+    "part": 4,
+    "kind": "statement",
+    "mascotPose": "approving",
+    "heading": "A Person Decides",
+    "lines": [
+      "Reads it.",
+      "Checks the source.",
+      "Decides."
+    ],
+    "narration": "So here's how it actually reaches a customer. A person reads the drafted decision, checks the cited source themselves, and decides whether to approve it. That's the only way anything this system finds ever reaches the knowledge base, and from there, a customer."
+  },
+  {
+    "id": "s16-scale",
+    "part": 5,
+    "kind": "boxes",
+    "mascotPose": "concerned",
+    "heading": "The Scale",
+    "boxes": [
+      { "title": "59 questions", "sub": "one team, one month" },
+      { "title": "Every month, every team", "sub": "any support organization with a knowledge base has this exact gap" }
+    ],
+    "narration": "Fifty-nine questions, one team, one month. That's not a one-time cleanup — it repeats every month, and it repeats on every team you have that runs a knowledge base. The twenty-minute tax from the start of this video isn't an incident. It's the ongoing cost of doing nothing."
+  },
+  {
+    "id": "s17-limit",
+    "part": 5,
+    "kind": "boxes",
+    "mascotPose": "neutral",
+    "heading": "The Honest Limit",
+    "boxes": [
+      { "title": "No source, no answer", "sub": "when it can't find real evidence, it says so" },
+      { "title": "It doesn't guess", "sub": "an unsupported draft is treated as invalid, not weak" }
+    ],
+    "narration": "And we want to be upfront about its limit, because every tool that sounds this capable eventually gets asked to do more than it should. When EverMind can't find a real source to support an answer, it says so. It doesn't guess, and it doesn't fill the gap with something plausible. An answer with no evidence behind it isn't treated as a weak answer — it's treated as an invalid one, and it never reaches a reviewer at all."
+  },
+  {
+    "id": "s18-outro",
+    "part": 5,
+    "kind": "outro",
+    "mascotPose": "closing",
+    "heading": "That's EverMind.",
+    "sub": "Built from real questions. Tested against known answers. Ready for one real knowledge base.",
+    "narration": "This is a working project, built from real support questions, with every decision it makes already defined and already tested against known answers — not a concept on a slide. We're not asking you to change how your team works today. We're asking for the chance to run this against one real knowledge base, and show you the twenty minutes back. That's EverMind."
+  }
+]

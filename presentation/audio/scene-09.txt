@@ -1,0 +1,1 @@
+Before we'd trust this on anything real, we tested it against questions where we already know the correct outcome — fifty-nine of them, covering genuine gaps, duplicates, and questions it should refuse. That turns the question from ‘does this look reasonable’ into ‘did it get the right answer,’ which is a much higher bar, and the one that actually matters.

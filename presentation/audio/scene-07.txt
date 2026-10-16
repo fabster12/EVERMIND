@@ -1,0 +1,1 @@
+And some questions simply aren't support questions at all. This one's about a job opening, not a shipment. EverMind recognizes that too, and declines before it ever gets near drafting — it knows the difference between a gap in the knowledge base and a question that was never its job to answer.

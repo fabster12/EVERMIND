@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;600;700&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1920px; height:1080px; overflow:hidden; background:#181818; }
+  .window { width:1920px; height:1080px; display:flex; flex-direction:column; font-family:'Inter',sans-serif; }
+  .titlebar { height:34px; background:#2b2b2b; display:flex; align-items:center; padding:0 14px; gap:8px; }
+  .dot { width:12px; height:12px; border-radius:50%; }
+  .dot.r { background:#ff5f57; } .dot.y { background:#febc2e; } .dot.g { background:#28c840; }
+  .titlebar .fname { color:#9d9d9d; font-size:13px; margin-left:12px; }
+  .term { flex:1; padding:34px 44px; font-family:'JetBrains Mono',monospace; font-size:19px;
+    line-height:1.75; color:#d8d8d8; background:#181818; }
+  .prompt { color:#57d08a; }
+  .cmd { color:#ffffff; font-weight:600; }
+  .line { opacity:.92; }
+  .dim { color:#8a8a8a; }
+  .ok { color:#57d08a; font-weight:600; }
+  .blank { height:14px; }
+  .jsonbox { margin-top:26px; background:#111112; border:1px solid #333333; border-radius:10px;
+    padding:24px 28px; box-shadow:0 14px 40px rgba(0,0,0,.5); }
+  .jk { color:#8bb9fe; } .js { color:#ce9178; } .jn { color:#b5cea8; } .jp { color:#d4d4d4; }
+  .jc { color:#d39f32; font-weight:700; }
+  .annot { margin-top:22px; color:#D39F32; font-family:'Inter',sans-serif; font-size:17px; font-weight:600; }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+      <span class="fname">evermind — review batch</span>
+    </div>
+    <div class="term">
+      <div class="line"><span class="prompt">$</span> <span class="cmd">run the review batch</span></div>
+      <div class="blank"></div>
+      <div class="line dim">Grouping 59 questions ... <span class="ok">12 groups found</span></div>
+      <div class="line dim">Checking against the knowledge base ...</div>
+      <div class="line dim">Retrieving supporting sources ...</div>
+      <div class="line dim">Drafting candidates ...</div>
+      <div class="blank"></div>
+      <div class="line">Wrote 12 candidates to <span class="cmd">review_queue.json</span></div>
+
+      <div class="jsonbox">
+<span class="jp">{</span><br>
+&nbsp;&nbsp;<span class="jk">"gap_id"</span><span class="jp">:</span> <span class="js">"GAP-Q005"</span><span class="jp">,</span><br>
+&nbsp;&nbsp;<span class="jk">"representative_question"</span><span class="jp">:</span> <span class="js">"If I ship DDP, who gets the duty bill?"</span><span class="jp">,</span><br>
+&nbsp;&nbsp;<span class="jk">"cluster_size"</span><span class="jp">:</span> <span class="jn">3</span><span class="jp">,</span><br>
+&nbsp;&nbsp;<span class="jk">"disposition"</span><span class="jp">:</span> <span class="jc">"HUMAN_REVIEW"</span><span class="jp">,</span><br>
+&nbsp;&nbsp;<span class="jk">"proposed_answer"</span><span class="jp">:</span> <span class="js">"Under DDP terms, the shipper is billed for duty, tax and the associated handling fee."</span><span class="jp">,</span><br>
+&nbsp;&nbsp;<span class="jk">"source_citations"</span><span class="jp">:</span> <span class="jp">[</span><span class="js">"SRC-02-P2"</span><span class="jp">],</span><br>
+&nbsp;&nbsp;<span class="jk">"confidence"</span><span class="jp">:</span> <span class="jn">0.87</span><span class="jp">,</span><br>
+&nbsp;&nbsp;<span class="jk">"reason"</span><span class="jp">:</span> <span class="js">"Supported by one trusted source; no conflicting guidance found."</span><br>
+<span class="jp">}</span>
+      </div>
+      <div class="annot">One decision. One source. Ready to check in under a minute.</div>
+    </div>
+  </div>
+</body>
+</html>

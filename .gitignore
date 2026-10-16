@@ -22,6 +22,10 @@ src/out/
 # it holds the rebuild script and the readmes that go inside the zips.
 dist/*.zip
 
+# Joined VP pitch video - 100+ MB, over GitHub's file size limit. Rebuild
+# from presentation/renders/part*.mp4 with scripts/merge_video_parts.sh.
+presentation/renders/evermind_vp_pitch.mp4
+
 # Python
 __pycache__/
 *.py[cod]

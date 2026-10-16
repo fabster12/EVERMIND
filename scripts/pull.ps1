@@ -10,6 +10,11 @@
 $ErrorActionPreference = "Stop"
 Set-Location (Join-Path $PSScriptRoot "..")
 
+# Pause before the window closes (e.g. double-clicked rather than run from
+# an already-open terminal) so the output stays readable. Fires on every
+# exit path, success or failure.
+try {
+
 $branch = (git rev-parse --abbrev-ref HEAD).Trim()
 
 git rev-parse --abbrev-ref '@{u}' 2>$null | Out-Null
@@ -32,3 +37,7 @@ if ($LASTEXITCODE -ne 0) {
 }
 
 Write-Host "Up to date with origin/$branch."
+
+} finally {
+    Start-Sleep -Seconds 8
+}

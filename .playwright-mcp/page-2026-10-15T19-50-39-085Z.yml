@@ -1,0 +1,73 @@
+- generic [ref=f6e2]:
+  - generic [ref=f6e3]: schemas.py — EVERMIND
+  - generic [ref=f6e8]:
+    - generic [ref=f6e14]:
+      - heading "Explorer" [level=4] [ref=f6e15]
+      - generic [ref=f6e16]:
+        - generic [ref=f6e17]: 📁 EVERMIND
+        - generic [ref=f6e18]: 📁 src
+        - generic [ref=f6e19]: 📁 evermind
+        - generic [ref=f6e20]: ● agent.py
+        - generic [ref=f6e21]: ● tools.py
+        - generic [ref=f6e22]: ● schemas.py
+        - generic [ref=f6e23]: ● guardrails.py
+        - generic [ref=f6e24]: ● grouping.py
+    - generic [ref=f6e25]:
+      - generic [ref=f6e26]: schemas.py
+      - generic [ref=f6e28]:
+        - generic [ref=f6e29]: "1"
+        - text: from pydantic import BaseModel, Field
+        - generic [ref=f6e30]: "2"
+        - text: from typing import Literal
+        - generic [ref=f6e31]: "3"
+        - generic [ref=f6e32]: "4"
+        - text: "class FAQCandidate(BaseModel):"
+        - generic [ref=f6e33]: "5"
+        - text: "\"\"\"One reviewable decision for one group of similar questions.\"\"\""
+        - generic [ref=f6e34]: "6"
+        - generic [ref=f6e35]: "7"
+        - text: "gap_id: str"
+        - generic [ref=f6e36]: "8"
+        - text: "representative_question: str"
+        - generic [ref=f6e37]: "9"
+        - text: "cluster_size: int"
+        - generic [ref=f6e38]: "10"
+        - generic [ref=f6e39]: "11"
+        - text: "disposition: Literal["
+        - generic [ref=f6e40]: "12"
+        - text: "\"HUMAN_REVIEW\","
+        - generic [ref=f6e41]: "13"
+        - text: "\"DUPLICATE_OF_EXISTING\","
+        - generic [ref=f6e42]: "14"
+        - text: "\"REJECT_OUT_OF_SCOPE\","
+        - generic [ref=f6e43]: "15"
+        - text: "]"
+        - generic [ref=f6e44]: "16"
+        - generic [ref=f6e45]: "17"
+        - text: "proposed_answer: str | None = Field("
+        - generic [ref=f6e46]: "18"
+        - text: default=None, max_length=150,
+        - generic [ref=f6e47]: "19"
+        - text: description="Only set when disposition is HUMAN_REVIEW.",
+        - generic [ref=f6e48]: "20"
+        - text: )
+        - generic [ref=f6e49]: "21"
+        - text: "source_citations: list[str] = Field(default_factory=list)"
+        - generic [ref=f6e50]: "22"
+        - generic [ref=f6e51]: "23"
+        - text: "confidence: float = Field(ge=0.0, le=1.0)"
+        - generic [ref=f6e52]: "24"
+        - text: "reason: str"
+        - generic [ref=f6e53]: "25"
+        - generic [ref=f6e54]: "26"
+        - text: "def model_post_init(self, __context) -> None:"
+        - generic [ref=f6e55]: "27"
+        - text: "# An answer with no citation is not a weak answer."
+        - generic [ref=f6e56]: "28"
+        - text: "# It is not a valid object, and never reaches a reviewer."
+        - generic [ref=f6e57]: "29"
+        - text: "if self.proposed_answer and not self.source_citations:"
+        - generic [ref=f6e58]: "30"
+        - text: raise ValueError("an answer must cite at least one source")
+        - generic [ref=f6e59]: Every field is checked before a draft can exist — this isn't a style guide, it's enforced.
+  - generic [ref=f6e61]: Python 3.12 · EverMind · src/evermind/schemas.py

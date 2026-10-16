@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;600;700&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1920px; height:1080px; overflow:hidden; background:#1e1e1e; }
+  body { font-family:'Inter',sans-serif; }
+  .window { width:1920px; height:1080px; display:flex; flex-direction:column; }
+  .titlebar { height:34px; background:#323233; display:flex; align-items:center; padding:0 14px; gap:8px; }
+  .dot { width:12px; height:12px; border-radius:50%; }
+  .dot.r { background:#ff5f57; } .dot.y { background:#febc2e; } .dot.g { background:#28c840; }
+  .titlebar .fname { color:#9d9d9d; font-size:13px; margin-left:12px; }
+  .body { flex:1; display:flex; }
+  .activitybar { width:50px; background:#333333; display:flex; flex-direction:column; align-items:center; padding-top:14px; gap:26px; }
+  .activitybar .ic { width:26px; height:26px; border-radius:4px; opacity:.55; background:#cccccc; }
+  .activitybar .ic.active { opacity:1; background:#ffffff; }
+  .sidebar { width:300px; background:#252526; color:#cccccc; padding:14px 0; font-size:13px; }
+  .sidebar h4 { padding:0 16px 8px; color:#bbbbbb; font-size:11px; letter-spacing:.08em; text-transform:uppercase; font-weight:700; }
+  .tree { padding-left:8px; }
+  .tree .row { display:flex; align-items:center; gap:7px; padding:4px 10px; border-radius:3px; }
+  .tree .row.open { background:#37373d; color:#ffffff; font-weight:600; }
+  .tree .ind1 { padding-left:22px; } .tree .ind2 { padding-left:38px; } .tree .ind3 { padding-left:54px; }
+  .tree .dir::before { content:"\1F4C1"; opacity:.5; font-size:11px; }
+  .tree .file::before { content:"\25CF"; font-size:8px; color:#8bb9fe; }
+  .tabbar { height:36px; background:#252526; display:flex; align-items:stretch; }
+  .tab { background:#1e1e1e; color:#ffffff; display:flex; align-items:center; gap:8px;
+    padding:0 16px; font-size:13px; border-top:2px solid #D39F32; border-right:1px solid #1b1b1b; }
+  .editor { flex:1; display:flex; flex-direction:column; background:#1e1e1e; }
+  .code { flex:1; padding:16px 28px; font-family:'JetBrains Mono',monospace; font-size:13px;
+    line-height:1.4; color:#d4d4d4; position:relative; white-space:pre; overflow:hidden; }
+  .code .codeline { display:block; white-space:pre; }
+  .ln { color:#5a5a5a; display:inline-block; width:30px; user-select:none; text-align:right; margin-right:20px; }
+  .kw { color:#c586c0; } .cls { color:#4ec9b0; } .str { color:#ce9178; } .com { color:#6a9955; font-style:italic; }
+  .fn { color:#dcdcaa; } .typ { color:#4ec9b0; } .num { color:#b5cea8; } .dec { color:#dcdcaa; }
+  /* bottom:170px clears the burned-in caption bar (#caps in build.mjs),
+     which is centered, bottom:46px, and can grow to ~2 wrapped lines at
+     30px/1.34 line-height ~ roughly 130px tall from the frame bottom. */
+  .callout { position:absolute; left:40px; bottom:170px; width:600px; background:#2a2a2d; border:1px solid #D39F32;
+    border-radius:10px; padding:14px 20px; color:#f0e4c8; font-family:'Inter',sans-serif; font-size:17px;
+    font-weight:600; line-height:1.3; box-shadow:0 10px 30px rgba(0,0,0,.5); }
+  .callout .pin { position:absolute; left:34px; top:-9px; width:16px; height:16px; background:#D39F32;
+    transform:rotate(45deg); }
+  .statusbar { height:26px; background:#D39F32; color:#1e1e1e; display:flex; align-items:center;
+    padding:0 14px; font-size:12px; font-weight:600; font-family:'JetBrains Mono',monospace; }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+      <span class="fname">schemas.py — EVERMIND</span>
+    </div>
+    <div class="body">
+      <div class="activitybar">
+        <div class="ic active"></div><div class="ic"></div><div class="ic"></div><div class="ic"></div>
+      </div>
+      <div class="sidebar">
+        <h4>Explorer</h4>
+        <div class="tree">
+          <div class="row dir">EVERMIND</div>
+          <div class="row dir ind1">src</div>
+          <div class="row dir ind2">evermind</div>
+          <div class="row file ind3">agent.py</div>
+          <div class="row file ind3">tools.py</div>
+          <div class="row file ind3 open">schemas.py</div>
+          <div class="row file ind3">guardrails.py</div>
+          <div class="row file ind3">grouping.py</div>
+        </div>
+      </div>
+      <div class="editor">
+        <div class="tabbar"><div class="tab">schemas.py</div></div>
+        <div class="code">
+<span class="ln">1</span><span class="kw">from</span> pydantic <span class="kw">import</span> BaseModel, Field
+<span class="ln">2</span><span class="kw">from</span> typing <span class="kw">import</span> Literal
+<span class="ln">3</span>
+<span class="ln">4</span><span class="kw">class</span> <span class="cls">FAQCandidate</span>(BaseModel):
+<span class="ln">5</span>    <span class="str">"""One reviewable decision for one group of similar questions."""</span>
+<span class="ln">6</span>
+<span class="ln">7</span>    gap_id: <span class="typ">str</span>
+<span class="ln">8</span>    representative_question: <span class="typ">str</span>
+<span class="ln">9</span>    cluster_size: <span class="typ">int</span>
+<span class="ln">10</span>
+<span class="ln">11</span>    disposition: Literal[
+<span class="ln">12</span>        <span class="str">"HUMAN_REVIEW"</span>,
+<span class="ln">13</span>        <span class="str">"DUPLICATE_OF_EXISTING"</span>,
+<span class="ln">14</span>        <span class="str">"REJECT_OUT_OF_SCOPE"</span>,
+<span class="ln">15</span>    ]
+<span class="ln">16</span>
+<span class="ln">17</span>    proposed_answer: <span class="typ">str</span> | <span class="kw">None</span> = Field(
+<span class="ln">18</span>        default=<span class="kw">None</span>, max_length=<span class="num">150</span>,
+<span class="ln">19</span>        description=<span class="str">"Only set when disposition is HUMAN_REVIEW."</span>,
+<span class="ln">20</span>    )
+<span class="ln">21</span>    source_citations: list[<span class="typ">str</span>] = Field(default_factory=list)
+<span class="ln">22</span>
+<span class="ln">23</span>    confidence: <span class="typ">float</span> = Field(ge=<span class="num">0.0</span>, le=<span class="num">1.0</span>)
+<span class="ln">24</span>    reason: <span class="typ">str</span>
+<span class="ln">25</span>
+<span class="ln">26</span>    <span class="kw">def</span> <span class="fn">model_post_init</span>(<span class="kw">self</span>, __context) -> <span class="kw">None</span>:
+<span class="ln">27</span>        <span class="com"># An answer with no citation is not a weak answer.</span>
+<span class="ln">28</span>        <span class="com"># It is not a valid object, and never reaches a reviewer.</span>
+<span class="ln">29</span>        <span class="kw">if</span> <span class="kw">self</span>.proposed_answer <span class="kw">and</span> <span class="kw">not</span> <span class="kw">self</span>.source_citations:
+<span class="ln">30</span>            <span class="kw">raise</span> ValueError(<span class="str">"an answer must cite at least one source"</span>)
+          <div class="callout">
+            <div class="pin"></div>
+            Every field is checked before a draft can exist — this isn't a style guide, it's enforced.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="statusbar">Python 3.12 · EverMind · src/evermind/schemas.py</div>
+  </div>
+</body>
+</html>

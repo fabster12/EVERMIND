@@ -1,0 +1,1 @@
+And it isn't a policy we're asking you to trust on good faith. There's no path in the code that lets it happen. The only thing the system is capable of writing is one list, for a person to read. Reaching your actual knowledge base from there requires a separate, deliberate, human action — every single time.

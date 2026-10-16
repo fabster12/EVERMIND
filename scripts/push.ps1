@@ -11,6 +11,11 @@ param([string]$Message = "")
 $ErrorActionPreference = "Stop"
 Set-Location (Join-Path $PSScriptRoot "..")
 
+# Pause before the window closes (e.g. double-clicked rather than run from
+# an already-open terminal) so the output stays readable. Fires on every
+# exit path, success or failure.
+try {
+
 $py = (Get-Command python -ErrorAction SilentlyContinue)
 if (-not $py) { $py = (Get-Command python3 -ErrorAction SilentlyContinue) }
 if (-not $py) {
@@ -57,3 +62,7 @@ else {
 if ($LASTEXITCODE -ne 0) { exit 1 }
 
 Write-Host "Pushed $branch."
+
+} finally {
+    Start-Sleep -Seconds 8
+}

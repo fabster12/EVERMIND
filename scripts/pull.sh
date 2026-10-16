@@ -10,6 +10,11 @@
 
 set -euo pipefail
 
+# Pause before the window closes (e.g. double-clicked rather than run from
+# an already-open terminal) so the output stays readable. Fires on every
+# exit path, success or failure.
+trap 'sleep 8' EXIT
+
 cd "$(dirname "$0")/.."
 
 BRANCH=$(git rev-parse --abbrev-ref HEAD)

@@ -1,0 +1,1 @@
+This is a working project, built from real support questions, with every decision it makes already defined and already tested against known answers — not a concept on a slide. We're not asking you to change how your team works today. We're asking for the chance to run this against one real knowledge base, and show you the twenty minutes back. That's EverMind.
