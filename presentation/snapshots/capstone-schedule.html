@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EverMind Capstone Schedule</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Layout: a vertical day-rail (today pinned open, future days collapsed-rhythm)
+   with numbered task cards; a thin connecting spine implies the week as one
+   continuous push rather than five separate lists. */
+:root{
+  --bg:#f6f4ef;
+  --surface:#ffffff;
+  --ink:#1f2420;
+  --ink-dim:#5c6660;
+  --line:#dcd6c9;
+  --accent:#2f6f5e;
+  --accent-soft:#e3efe9;
+  --amber:#b5792b;
+  --amber-soft:#f6ead9;
+  --done:#8a9a8f;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#15181a;
+    --surface:#1d2224;
+    --ink:#e9e6dd;
+    --ink-dim:#9aa6a0;
+    --line:#333b38;
+    --accent:#5cbba0;
+    --accent-soft:#223834;
+    --amber:#d9a455;
+    --amber-soft:#3a2e1c;
+    --done:#55605a;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#15181a;
+  --surface:#1d2224;
+  --ink:#e9e6dd;
+  --ink-dim:#9aa6a0;
+  --line:#333b38;
+  --accent:#5cbba0;
+  --accent-soft:#223834;
+  --amber:#d9a455;
+  --amber-soft:#3a2e1c;
+  --done:#55605a;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"Inter","Segoe UI",system-ui,sans-serif;
+  padding-left:max(16px, env(safe-area-inset-left,0px));
+  padding-right:max(16px, env(safe-area-inset-right,0px));
+}
+.wrap{
+  max-width:860px;
+  margin:0 auto;
+  padding-block:40px 64px;
+}
+
+header.page{
+  margin-bottom:36px;
+}
+.eyebrow{
+  font-family:"JetBrains Mono",ui-monospace,monospace;
+  font-size:12px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin:0 0 10px;
+}
+h1{
+  font-family:"Fraunces","Georgia",serif;
+  font-weight:600;
+  font-size:clamp(28px,5vw,40px);
+  line-height:1.1;
+  margin:0 0 10px;
+  text-wrap:balance;
+}
+.sub{
+  color:var(--ink-dim);
+  font-size:15px;
+  line-height:1.5;
+  max-width:60ch;
+  margin:0;
+}
+
+.rail{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  gap:28px;
+}
+.rail::before{
+  content:"";
+  position:absolute;
+  left:19px;
+  top:8px;
+  bottom:8px;
+  width:2px;
+  background:var(--line);
+}
+
+.day{
+  position:relative;
+  padding-left:52px;
+  min-width:0;
+}
+.day-dot{
+  position:absolute;
+  left:0;
+  top:0;
+  width:40px;
+  height:40px;
+  border-radius:999px;
+  background:var(--surface);
+  border:2px solid var(--line);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:"JetBrains Mono",ui-monospace,monospace;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.02em;
+  color:var(--ink-dim);
+  z-index:1;
+}
+.day.today .day-dot{
+  background:var(--accent);
+  border-color:var(--accent);
+  color:var(--surface);
+}
+
+.day-head{
+  display:flex;
+  align-items:baseline;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:12px;
+  padding-top:6px;
+}
+.day-name{
+  font-family:"Fraunces","Georgia",serif;
+  font-size:21px;
+  font-weight:600;
+}
+.day-date{
+  font-family:"JetBrains Mono",ui-monospace,monospace;
+  font-size:12px;
+  color:var(--ink-dim);
+}
+.day-tag{
+  font-family:"JetBrains Mono",ui-monospace,monospace;
+  font-size:10.5px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  padding:3px 9px;
+  border-radius:999px;
+  background:var(--amber-soft);
+  color:var(--amber);
+  font-weight:700;
+}
+.day.today .day-tag{
+  background:var(--accent-soft);
+  color:var(--accent);
+}
+
+.cards{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.card{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:14px 16px;
+  min-width:0;
+}
+.card-top{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+}
+.num{
+  font-family:"JetBrains Mono",ui-monospace,monospace;
+  font-size:12px;
+  font-weight:700;
+  color:var(--accent);
+  flex:none;
+  width:22px;
+  padding-top:2px;
+}
+.card-body{min-width:0; flex:1}
+.title{
+  font-size:14.5px;
+  font-weight:600;
+  line-height:1.4;
+  margin:0;
+}
+.detail{
+  font-size:13px;
+  color:var(--ink-dim);
+  line-height:1.55;
+  margin:5px 0 0;
+}
+.note{
+  margin-top:8px;
+  padding:9px 11px;
+  background:var(--accent-soft);
+  border-radius:8px;
+  font-size:12.5px;
+  color:var(--ink);
+  line-height:1.5;
+}
+.note strong{color:var(--accent)}
+code{
+  font-family:"JetBrains Mono",ui-monospace,monospace;
+  font-size:.92em;
+  background:var(--amber-soft);
+  color:var(--amber);
+  padding:1px 6px;
+  border-radius:5px;
+  word-break:break-word;
+}
+pre{
+  font-family:"JetBrains Mono",ui-monospace,monospace;
+  font-size:12.5px;
+  line-height:1.6;
+  background:var(--amber-soft);
+  color:var(--ink);
+  padding:11px 13px;
+  border-radius:8px;
+  overflow-x:auto;
+  margin:8px 0 0;
+}
+.sub-list{
+  margin:6px 0 0;
+  padding-left:0;
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+.sub-list li{
+  font-size:13px;
+  color:var(--ink-dim);
+  line-height:1.5;
+  padding-left:14px;
+  position:relative;
+}
+.sub-list li::before{
+  content:"→";
+  position:absolute;
+  left:0;
+  color:var(--accent);
+}
+
+footer.page{
+  margin-top:40px;
+  padding-top:18px;
+  border-top:1px solid var(--line);
+  font-size:12px;
+  color:var(--ink-dim);
+  font-family:"JetBrains Mono",ui-monospace,monospace;
+}
+
+@media (max-width:480px){
+  .rail::before{left:15px}
+  .day{padding-left:42px}
+  .day-dot{width:32px;height:32px;font-size:9.5px}
+}
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="page">
+    <p class="eyebrow">EverMind — FedEx Capstone</p>
+    <h1>This week, day by day</h1>
+    <p class="sub">Friday through Thursday — repo access, the proposal, the OpenSpec folders, the agent, and the pitch. Each card is one concrete thing to finish, in order.</p>
+  </header>
+
+  <div class="rail">
+
+    <!-- FRIDAY -->
+    <div class="day today">
+      <div class="day-dot">FRI</div>
+      <div class="day-head">
+        <span class="day-name">Friday</span>
+        <span class="day-date">Oct 16</span>
+        <span class="day-tag">Today</span>
+      </div>
+      <div class="cards">
+
+        <div class="card">
+          <div class="card-top">
+            <span class="num">01</span>
+            <div class="card-body">
+              <p class="title">Confirm GitHub access to the repo</p>
+              <p class="detail">Check everyone can clone and push to <code>fabster12/EVERMIND</code> before the proposal work starts landing there.</p>
+              <pre>git clone https://github.com/fabster12/EVERMIND.git
+cd EVERMIND
+git remote -v          # confirm origin points at the repo above</pre>
+              <div class="note"><strong>Helper scripts —</strong> <code>scripts/push.sh</code> stages everything, runs a credential scan, commits (writes its own message if you don't pass one), and pushes. <code>scripts/pull.sh</code> rebases on top of <code>origin/main</code> and auto-stashes any uncommitted work first, so a dirty tree never blocks a pull. Windows equivalents are the matching <code>.ps1</code> files.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="num">02</span>
+            <div class="card-body">
+              <p class="title">Get the proposal correct</p>
+              <p class="detail">Back to one agent as of yesterday — reconcile <code>src/openspec/changes/add-evermind-pipeline/proposal.md</code> with that decision before anything downstream is rebuilt on top of it.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="num">03</span>
+            <div class="card-body">
+              <p class="title">Update the summary and detail PDFs</p>
+              <p class="detail">Regenerate <code>docs/gate1/FedEx-Capstone-Summary-Group1.pdf</code> (via <code>tools/build_summary_group1.py</code>) so it reflects the corrected proposal, not the single-agent-era draft.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- MONDAY -->
+    <div class="day">
+      <div class="day-dot">MON</div>
+      <div class="day-head">
+        <span class="day-name">Monday</span>
+        <span class="day-date">Oct 19</span>
+      </div>
+      <div class="cards">
+
+        <div class="card">
+          <div class="card-top">
+            <span class="num">04</span>
+            <div class="card-body">
+              <p class="title">Re-check the summary for the teacher</p>
+              <p class="detail">Last pass before it's shown — read it as the teacher will, not as the author.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="num">05</span>
+            <div class="card-body">
+              <p class="title">Review the OpenSpec folders</p>
+              <p class="detail">Four folders to align: <code>design.md</code>, <code>tasks.md</code>, <code>proposal.md</code>, and <code>specs/</code> under <code>src/openspec/changes/add-evermind-pipeline/</code>.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="num">06</span>
+            <div class="card-body">
+              <p class="title">Run MASTERPROMPT.md</p>
+              <p class="detail">Expected to generate code into the folders that are currently just placeholders:</p>
+              <ul class="sub-list">
+                <li><code>src/evermind/</code></li>
+                <li><code>src/evals/</code></li>
+                <li><code>src/fixtures/</code></li>
+                <li><code>src/out/</code></li>
+                <li><code>src/tests/</code></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TUESDAY -->
+    <div class="day">
+      <div class="day-dot">TUE</div>
+      <div class="day-head">
+        <span class="day-name">Tuesday</span>
+        <span class="day-date">Oct 20</span>
+      </div>
+      <div class="cards">
+
+        <div class="card">
+          <div class="card-top">
+            <span class="num">07</span>
+            <div class="card-body">
+              <p class="title">Test the agents</p>
+              <p class="detail">First checkpoint: does it run at all, end to end, on whatever MASTERPROMPT generated Monday?</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="num">08</span>
+            <div class="card-body">
+              <p class="title">Improve the agents</p>
+              <p class="detail">Fix what Tuesday's test run surfaces.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- WEDNESDAY -->
+    <div class="day">
+      <div class="day-dot">WED</div>
+      <div class="day-head">
+        <span class="day-name">Wednesday</span>
+        <span class="day-date">Oct 21</span>
+      </div>
+      <div class="cards">
+
+        <div class="card">
+          <div class="card-top">
+            <span class="num">09</span>
+            <div class="card-body">
+              <p class="title">Plan the presentation</p>
+              <ul class="sub-list">
+                <li>A tight video prompt, 4 minutes — not the one rushed out in 10 minutes earlier this week.</li>
+                <li>A 1-minute live demo of the agent, run in person.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- THURSDAY -->
+    <div class="day">
+      <div class="day-dot">THU</div>
+      <div class="day-head">
+        <span class="day-name">Thursday</span>
+        <span class="day-date">Oct 22</span>
+      </div>
+      <div class="cards">
+
+        <div class="card">
+          <div class="card-top">
+            <span class="num">10</span>
+            <div class="card-body">
+              <p class="title">Extra tests</p>
+              <p class="detail">Pass over whatever Tuesday's fixes didn't fully cover.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="num">11</span>
+            <div class="card-body">
+              <p class="title">User-facing front end</p>
+              <p class="detail">Reference level: the UI Siva showed.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="num">12</span>
+            <div class="card-body">
+              <p class="title">Admin-facing front end</p>
+              <p class="detail">Same reference bar, admin side.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="page">EverMind — Friday, Oct 16 → Thursday, Oct 22</footer>
+
+</div>
+</body>
+</html>
